@@ -2,9 +2,9 @@
 {
     public class Doctor : Person
     {
-        public string Specialist { get; set; }
-        public string Description { get; set; }
-        public string Education { get; set; }
-        public string Services { get; set; }
+        public string Specialist { get; set; } = string.Empty;
+        public string Description { get; set; } = string.Empty;
+        public string Education { get; set; } = string.Empty;
+        public string Services { get; set; } = string.Empty;
     }
 }
