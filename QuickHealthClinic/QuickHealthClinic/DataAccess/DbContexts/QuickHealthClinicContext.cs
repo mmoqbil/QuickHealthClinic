@@ -1,6 +1,8 @@
-﻿namespace QuickHealthClinic.DataAccess.DbContexts
+﻿using Microsoft.EntityFrameworkCore;
+
+namespace QuickHealthClinic.DataAccess.DbContexts
 {
-    public class QuickHealthClinicContext
+    public class QuickHealthClinicContext : DbContext
     {
     }
 }
