@@ -15,5 +15,9 @@ namespace QuickHealthClinic.DataAccess.DbContexts
         {
             optionsBuilder.LogTo(message => Debug.WriteLine(message));
         }
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
+        }
     }
 }
