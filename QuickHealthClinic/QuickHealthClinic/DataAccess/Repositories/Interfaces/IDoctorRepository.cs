@@ -1,6 +1,8 @@
-﻿namespace QuickHealthClinic.DataAccess.Repositories.Interfaces
+﻿using QuickHealthClinic.DataAccess.Entities;
+
+namespace QuickHealthClinic.DataAccess.Repositories.Interfaces
 {
-    public interface IDoctorRepository
+    public interface IDoctorRepository : IRepository<Doctor>
     {
     }
 }
