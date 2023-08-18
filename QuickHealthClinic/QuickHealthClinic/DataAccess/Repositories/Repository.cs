@@ -9,6 +9,10 @@ namespace QuickHealthClinic.DataAccess.Repositories
     {
         protected readonly QuickHealthClinicContext Context;
         protected DbSet<T> DbSet;
+        protected Repository(QuickHealthClinicContext context)
+        {
+            Context = context;
+        }
         public Task<IReadOnlyList<T>> GetAllAsync(Expression<Func<T, bool>>? filter = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, string? includeProperties = null)
         {
             throw new NotImplementedException();
