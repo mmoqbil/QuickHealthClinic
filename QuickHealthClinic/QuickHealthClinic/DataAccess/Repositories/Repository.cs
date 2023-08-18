@@ -28,6 +28,7 @@ namespace QuickHealthClinic.DataAccess.Repositories
                     .Aggregate(query, (current, includeProperty) =>
                         current.Include(includeProperty));
 
+            if (orderBy is not null) query = orderBy(query);
 
             return await query.AsNoTracking().ToListAsync();
         }
