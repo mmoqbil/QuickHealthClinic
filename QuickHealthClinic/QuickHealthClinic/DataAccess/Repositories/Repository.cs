@@ -13,9 +13,16 @@ namespace QuickHealthClinic.DataAccess.Repositories
         {
             Context = context;
         }
-        public Task<IReadOnlyList<T>> GetAllAsync(Expression<Func<T, bool>>? filter = null, Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null, string? includeProperties = null)
+        public async Task<IReadOnlyList<T>> GetAllAsync(
+        Expression<Func<T, bool>>? filter = null,
+        Func<IQueryable<T>, IOrderedQueryable<T>>? orderBy = null,
+        string? includeProperties = null)
         {
-            throw new NotImplementedException();
+            IQueryable<T> query = DbSet;
+
+            if (filter is not null) query = query.Where(filter);
+
+
+            return await query.AsNoTracking().ToListAsync();
         }
-    }
 }
