@@ -22,6 +22,12 @@ namespace QuickHealthClinic.DataAccess.Repositories
 
             if (filter is not null) query = query.Where(filter);
 
+            if (!string.IsNullOrWhiteSpace(includeProperties))
+                query = includeProperties
+                    .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                    .Aggregate(query, (current, includeProperty) =>
+                        current.Include(includeProperty));
+
 
             return await query.AsNoTracking().ToListAsync();
         }
