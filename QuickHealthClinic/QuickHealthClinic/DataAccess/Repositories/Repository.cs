@@ -32,4 +32,5 @@ namespace QuickHealthClinic.DataAccess.Repositories
 
             return await query.AsNoTracking().ToListAsync();
         }
+    }
 }
