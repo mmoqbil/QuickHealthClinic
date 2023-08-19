@@ -19,9 +19,9 @@ namespace QuickHealthClinic.DataAccess.Repositories
             GC.SuppressFinalize(this);
         }
 
-        public Task SaveAsync()
+        public async Task SaveAsync()
         {
-            throw new NotImplementedException();
+           await _context.SaveChangesAsync();
         }
         protected virtual void Dispose(bool disposing)
         {
