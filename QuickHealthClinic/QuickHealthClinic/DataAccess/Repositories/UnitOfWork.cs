@@ -15,12 +15,17 @@ namespace QuickHealthClinic.DataAccess.Repositories
 
         public void Dispose()
         {
-            throw new NotImplementedException();
+            Dispose(true);
+            GC.SuppressFinalize(this);
         }
 
         public Task SaveAsync()
         {
             throw new NotImplementedException();
+        }
+        protected virtual void Dispose(bool disposing)
+        {
+            if (disposing) _context?.Dispose();
         }
     }
 }
