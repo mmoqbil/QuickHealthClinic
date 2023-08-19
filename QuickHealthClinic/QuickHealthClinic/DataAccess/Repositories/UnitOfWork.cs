@@ -1,10 +1,16 @@
-﻿using QuickHealthClinic.DataAccess.Repositories.Interfaces;
+﻿using QuickHealthClinic.DataAccess.DbContexts;
+using QuickHealthClinic.DataAccess.Repositories.Interfaces;
 
 namespace QuickHealthClinic.DataAccess.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        public IDoctorRepository DoctorRepository => throw new NotImplementedException();
+        private readonly QuickHealthClinicContext _context;
+        public UnitOfWork(QuickHealthClinicContext context)
+        {
+            _context = context;
+        }
+        public IDoctorRepository DoctorRepository { get; }
 
         public void Dispose()
         {
