@@ -80,3 +80,5 @@ C:\reactcsharp\QuickHealthClinic\QuickHealthClinic2\QuickHealthClinic\QuickHealt
 C:\reactcsharp\QuickHealthClinic\QuickHealthClinic2\QuickHealthClinic\QuickHealthClinic\obj\Debug\net6.0\QuickHealthClinic.pdb
 C:\reactcsharp\QuickHealthClinic\QuickHealthClinic2\QuickHealthClinic\QuickHealthClinic\obj\Debug\net6.0\QuickHealthClinic.genruntimeconfig.cache
 C:\reactcsharp\QuickHealthClinic\QuickHealthClinic2\QuickHealthClinic\QuickHealthClinic\obj\Debug\net6.0\ref\QuickHealthClinic.dll
+C:\reactcsharp\QuickHealthClinic\QuickHealthClinic2\QuickHealthClinic\QuickHealthClinic\bin\Debug\net6.0\AutoMapper.dll
+C:\reactcsharp\QuickHealthClinic\QuickHealthClinic2\QuickHealthClinic\QuickHealthClinic\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
