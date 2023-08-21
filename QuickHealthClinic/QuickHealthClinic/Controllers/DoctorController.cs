@@ -9,5 +9,9 @@ namespace QuickHealthClinic.Controllers
     public class DoctorController : ControllerBase
     {
         private readonly IDoctorService _doctorService;
+        public DoctorController(IDoctorService doctorService)
+        {
+            _doctorService = doctorService;
+        }
     }
 }
