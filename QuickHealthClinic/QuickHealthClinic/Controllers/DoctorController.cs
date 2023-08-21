@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using QuickHealthClinic.DTOs.DoctorDtoFolder;
 using QuickHealthClinic.Services.DoctorServices;
 
 namespace QuickHealthClinic.Controllers
@@ -12,6 +13,13 @@ namespace QuickHealthClinic.Controllers
         public DoctorController(IDoctorService doctorService)
         {
             _doctorService = doctorService;
+        }
+
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<DoctorDto>>> GetAllDoctorsAsync()
+        {
+            var doctors = await _doctorService.GetDoctorsAsync();
+            return Ok(doctors);
         }
     }
 }
