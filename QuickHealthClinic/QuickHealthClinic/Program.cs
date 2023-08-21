@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using QuickHealthClinic.DataAccess.DbContexts;
+using QuickHealthClinic.DataAccess.Repositories;
+using QuickHealthClinic.DataAccess.Repositories.Interfaces;
 using QuickHealthClinic.Services.DoctorServices;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -16,6 +18,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddScoped<IDoctorService, DoctorService>();
+builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
 
 var app = builder.Build();
 
