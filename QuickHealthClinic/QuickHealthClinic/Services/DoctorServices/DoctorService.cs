@@ -35,9 +35,15 @@ namespace QuickHealthClinic.Services.DoctorServices
             return doctorsDto;
         }
 
-        public Task<DoctorDto> GetDoctorByIdAsync(int id)
+        public async Task<DoctorDto> GetDoctorByIdAsync(int id)
         {
-            throw new NotImplementedException();
+            var doctor = await _unitOfWork.DoctorRepository
+            .GetAsync(d => d.Id == id, "Address");
+
+            var doctorDto = _mapper.Map<DoctorDto>(doctor);
+
+            return doctorDto;
+
         }
     }
 }
