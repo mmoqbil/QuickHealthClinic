@@ -1,6 +1,6 @@
 ﻿namespace QuickHealthClinic.Configurations.Exceptions
 {
-    public class ApiNotFoundException
+    public class NotFoundApiException
     {
     }
 }
