@@ -32,5 +32,10 @@ namespace QuickHealthClinic.DataAccess.Repositories
 
             return await query.AsNoTracking().ToListAsync();
         }
+
+        public async Task<T?> GetAsync(int id)
+        {
+            return await DbSet.FindAsync(id);
+        }
     }
 }
