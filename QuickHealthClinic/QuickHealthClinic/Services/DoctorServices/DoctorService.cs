@@ -18,7 +18,7 @@ namespace QuickHealthClinic.Services.DoctorServices
         }
         public async Task<IEnumerable<DoctorDto>> GetDoctorsAsync() 
         {
-            var doctors = await _unitOfWork.DoctorRepository.GetAllAsync();
+            var doctors = await _unitOfWork.DoctorRepository.GetAllAsync(includeProperties: "Adress");
 
             var doctorsDto = _mapper.Map<List<DoctorDto>>(doctors);
 
