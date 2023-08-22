@@ -10,5 +10,8 @@ namespace QuickHealthClinic.DataAccess.Repositories.Interfaces
             string? includeProperties = null);
 
         Task<T?> GetAsync(int id);
+        Task<T?> GetAsync(
+        Expression<Func<T, bool>>? filter = null,
+        string? includeProperties = null);
     }
 }
