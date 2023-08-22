@@ -6,5 +6,6 @@ namespace QuickHealthClinic.Services.DoctorServices
     {
         Task<IEnumerable<DoctorDto>> GetDoctorsAsync();
         Task<IEnumerable<DoctorDto>> GetDoctorsBySpecializationAsync(string specialization);
+        Task<DoctorDto> GetDoctorByIdAsync(int id);
     }
 }
