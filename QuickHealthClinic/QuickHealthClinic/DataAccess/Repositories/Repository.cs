@@ -37,5 +37,21 @@ namespace QuickHealthClinic.DataAccess.Repositories
         {
             return await DbSet.FindAsync(id);
         }
+        public async Task<T?> GetAsync(
+        Expression<Func<T, bool>>? filter = null,
+        string? includeProperties = null)
+        {
+            IQueryable<T> query = DbSet;
+
+            if (filter is not null) query = query.Where(filter);
+
+            if (!string.IsNullOrWhiteSpace(includeProperties))
+                query = includeProperties
+                    .Split(new[] { ',' }, StringSplitOptions.RemoveEmptyEntries)
+                    .Aggregate(query, (current, includeProperty) =>
+                        current.Include(includeProperty));
+
+            return await query.FirstOrDefaultAsync();
+        }
     }
 }
