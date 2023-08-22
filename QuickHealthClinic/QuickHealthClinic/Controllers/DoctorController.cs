@@ -30,5 +30,11 @@ namespace QuickHealthClinic.Controllers
             return Ok(doctors);
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<DoctorDto>> GetDoctorByIdAsync([FromRoute] int id)
+        {
+            var doctor = await _doctorService.GetDoctorByIdAsync(id);
+            return Ok(doctor);
+        }
     }
 }
