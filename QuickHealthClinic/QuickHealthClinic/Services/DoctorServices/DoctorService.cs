@@ -42,7 +42,7 @@ namespace QuickHealthClinic.Services.DoctorServices
             .GetAsync(d => d.Id == id, "Address");
 
             if (doctor is null)
-                throw new ApiNotFoundException(nameof(DoctorDto), id.ToString());
+                throw new NotFoundApiException(nameof(DoctorDto), id.ToString());
 
             var doctorDto = _mapper.Map<DoctorDto>(doctor);
 
