@@ -21,6 +21,7 @@ namespace QuickHealthClinic.Controllers
             var doctors = await _doctorService.GetDoctorsAsync();
             return Ok(doctors);
         }
+
         [HttpGet("search/{specialization}")]
         public async Task<ActionResult<IEnumerable<DoctorDto>>> GetDoctorsBySpecializationAsync(
         [FromRoute] string specialization)
@@ -28,5 +29,6 @@ namespace QuickHealthClinic.Controllers
             var doctors = await _doctorService.GetDoctorsBySpecializationAsync(specialization);
             return Ok(doctors);
         }
+
     }
 }

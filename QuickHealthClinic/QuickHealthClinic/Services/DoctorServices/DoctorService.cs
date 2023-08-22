@@ -2,6 +2,7 @@
 using QuickHealthClinic.DataAccess.DbContexts;
 using QuickHealthClinic.DataAccess.Repositories.Interfaces;
 using QuickHealthClinic.DTOs.DoctorDtoFolder;
+using QuickHealthClinic.Configurations.Exceptions;
 
 namespace QuickHealthClinic.Services.DoctorServices
 {
@@ -39,6 +40,9 @@ namespace QuickHealthClinic.Services.DoctorServices
         {
             var doctor = await _unitOfWork.DoctorRepository
             .GetAsync(d => d.Id == id, "Address");
+
+            if (doctor is null)
+                throw new ApiNotFoundException(nameof(DoctorDto), id.ToString());
 
             var doctorDto = _mapper.Map<DoctorDto>(doctor);
 
