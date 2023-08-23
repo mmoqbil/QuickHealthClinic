@@ -59,5 +59,7 @@ namespace QuickHealthClinic.DataAccess.Repositories
         {
             await DbSet.AddAsync(entity);
         }
+
+
     }
 }
