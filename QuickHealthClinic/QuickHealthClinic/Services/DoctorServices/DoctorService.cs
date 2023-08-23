@@ -54,5 +54,17 @@ namespace QuickHealthClinic.Services.DoctorServices
             return doctorDto;
 
         }
+
+        public async Task<(int, CreateDoctorDto)> CreateDoctorAsync(CreateDoctorDto dto)
+        {
+            var doctor = _mapper.Map<Doctor>(dto);
+            var hashedPassword = _passwordHasher.HashPassword(doctor, dto.PasswordHash);
+            doctor.PasswordHash = hashedPassword;
+
+            await _unitOfWork.DoctorRepository.AddAsync(doctor);
+            await _unitOfWork.SaveAsync();
+
+            return (doctor.Id, _mapper.Map<CreateDoctorDto>(doctor));
+        }
     }
 }
