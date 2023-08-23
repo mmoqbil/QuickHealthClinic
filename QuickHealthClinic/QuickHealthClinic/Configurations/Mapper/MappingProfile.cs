@@ -9,7 +9,11 @@ namespace QuickHealthClinic.Configurations.Mapper
     {
         public MappingProfile()
         {
-            CreateMap<Doctor, DoctorDto>();
+            CreateMap<Doctor, DoctorDto>()
+            .ForMember(dto => dto.City, d => d.MapFrom(a => a.Address.City))
+            .ForMember(dto => dto.Street, d => d.MapFrom(a => a.Address.Street))
+            .ForMember(dto => dto.PostalCode, d => d.MapFrom(a => a.Address.PostalCode));
+
             CreateMap<CreateDoctorDto, Doctor>();
         }
     }
