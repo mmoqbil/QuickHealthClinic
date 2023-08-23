@@ -60,6 +60,9 @@ namespace QuickHealthClinic.DataAccess.Repositories
             await DbSet.AddAsync(entity);
         }
 
-
+        public void Modify(T entity)
+        {
+            Context.Entry(entity).State = EntityState.Modified;
+        }
     }
 }
