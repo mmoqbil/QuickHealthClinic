@@ -1,4 +1,6 @@
-﻿namespace QuickHealthClinic.Authorization
+﻿using Microsoft.AspNetCore.Authorization;
+
+namespace QuickHealthClinic.Authorization
 {
     public enum ResourceOperation
     {
@@ -7,7 +9,14 @@
         Update,
         Delete
     }
-    public class ResourceOperationRequirement
+
+    public class ResourceOperationRequirement : IAuthorizationRequirement
     {
+        public ResourceOperationRequirement(ResourceOperation resourceOperation)
+        {
+            ResourceOperation = resourceOperation;
+        }
+
+        public ResourceOperation ResourceOperation { get; }
     }
 }
