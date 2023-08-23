@@ -13,5 +13,6 @@ namespace QuickHealthClinic.DataAccess.Repositories.Interfaces
         Expression<Func<T, bool>>? filter = null,
         string? includeProperties = null);
         Task AddAsync(T entity);
+        void Modify(T entity);
     }
 }
