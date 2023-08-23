@@ -14,13 +14,11 @@ namespace QuickHealthClinic.Services.DoctorServices
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
         private readonly QuickHealthClinicContext _context;
-        private readonly IPasswordHasher<Doctor> _passwordHasher;
-        public DoctorService(IUnitOfWork unitOfWork, IMapper mapper, QuickHealthClinicContext context, IPasswordHasher<Doctor> passwordHasher)
+        public DoctorService(IUnitOfWork unitOfWork, IMapper mapper, QuickHealthClinicContext context)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _context = context;
-            _passwordHasher = passwordHasher;
         }
 
         public async Task<IEnumerable<DoctorDto>> GetDoctorsAsync()
@@ -58,8 +56,6 @@ namespace QuickHealthClinic.Services.DoctorServices
         public async Task<(int, CreateDoctorDto)> CreateDoctorAsync(CreateDoctorDto dto)
         {
             var doctor = _mapper.Map<Doctor>(dto);
-            var hashedPassword = _passwordHasher.HashPassword(doctor, dto.PasswordHash);
-            doctor.PasswordHash = hashedPassword;
 
             await _unitOfWork.DoctorRepository.AddAsync(doctor);
             await _unitOfWork.SaveAsync();
