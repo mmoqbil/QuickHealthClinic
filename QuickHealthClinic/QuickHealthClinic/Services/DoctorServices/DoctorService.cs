@@ -14,11 +14,13 @@ namespace QuickHealthClinic.Services.DoctorServices
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
         private readonly QuickHealthClinicContext _context;
-        public DoctorService(IUnitOfWork unitOfWork, IMapper mapper, QuickHealthClinicContext context)
+        private readonly IPasswordHasher<Doctor> _passwordHasher;
+        public DoctorService(IUnitOfWork unitOfWork, IMapper mapper, QuickHealthClinicContext context, IPasswordHasher<Doctor> passwordHasher)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _context = context;
+            _passwordHasher = passwordHasher;
         }
 
         public async Task<IEnumerable<DoctorDto>> GetDoctorsAsync()

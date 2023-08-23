@@ -1,7 +1,10 @@
 using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using QuickHealthClinic.Authorization;
 using QuickHealthClinic.DataAccess.DbContexts;
+using QuickHealthClinic.DataAccess.Entities;
 using QuickHealthClinic.DataAccess.Repositories;
 using QuickHealthClinic.DataAccess.Repositories.Interfaces;
 using QuickHealthClinic.Services.DoctorServices;
@@ -23,6 +26,11 @@ builder.Services.AddScoped<IDoctorService, DoctorService>();
 builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAuthorizationHandler, DoctorResourceOperationRequirementHandler>();
+builder.Services
+    .AddIdentity<IdentityUser, IdentityRole>()
+    .AddDefaultTokenProviders()
+    .AddEntityFrameworkStores<QuickHealthClinicContext>();
+
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
