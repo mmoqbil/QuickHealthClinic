@@ -27,7 +27,7 @@ builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAuthorizationHandler, DoctorResourceOperationRequirementHandler>();
 builder.Services
-    .AddIdentity<IdentityUser, IdentityRole>()
+    .AddIdentity<Doctor, IdentityRole>()
     .AddDefaultTokenProviders()
     .AddEntityFrameworkStores<QuickHealthClinicContext>();
 
