@@ -1,4 +1,5 @@
-﻿namespace QuickHealthClinic.DataAccess.Entities
+﻿
+namespace QuickHealthClinic.DataAccess.Entities
 {
     public class Doctor : Person
     {

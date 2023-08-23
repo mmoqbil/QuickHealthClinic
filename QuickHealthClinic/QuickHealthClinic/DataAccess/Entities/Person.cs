@@ -1,6 +1,8 @@
-﻿namespace QuickHealthClinic.DataAccess.Entities
+﻿using Microsoft.AspNetCore.Identity;
+
+namespace QuickHealthClinic.DataAccess.Entities
 {
-    public abstract class Person
+    public abstract class Person : IdentityUser
     {
         public int Id { get; set; }
         public string FirstName { get; set; } = string.Empty;
