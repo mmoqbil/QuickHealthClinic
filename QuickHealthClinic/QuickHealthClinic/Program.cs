@@ -1,4 +1,6 @@
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.EntityFrameworkCore;
+using QuickHealthClinic.Authorization;
 using QuickHealthClinic.DataAccess.DbContexts;
 using QuickHealthClinic.DataAccess.Repositories;
 using QuickHealthClinic.DataAccess.Repositories.Interfaces;
@@ -20,6 +22,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IDoctorService, DoctorService>();
 builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
+builder.Services.AddScoped<IAuthorizationHandler, DoctorResourceOperationRequirementHandler>();
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
