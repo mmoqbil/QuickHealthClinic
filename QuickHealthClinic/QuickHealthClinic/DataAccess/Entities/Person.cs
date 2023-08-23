@@ -11,5 +11,6 @@
         public virtual Address Address { get; set; }
         public DateTime Created { get; }
         public string AvatarUri { get; set; } = string.Empty;
+        public string PasswordHash { get; set; }
     }
 }

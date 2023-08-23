@@ -5,6 +5,7 @@ using QuickHealthClinic.DTOs.DoctorDtoFolder;
 using QuickHealthClinic.Configurations.Exceptions;
 using Microsoft.AspNetCore.Identity;
 using QuickHealthClinic.DataAccess.Entities;
+using QuickHealthClinic.DTOs.AccountDtoFolder;
 
 namespace QuickHealthClinic.Services.DoctorServices
 {
@@ -22,7 +23,7 @@ namespace QuickHealthClinic.Services.DoctorServices
             _passwordHasher = passwordHasher;
         }
 
-        public async Task<IEnumerable<DoctorDto>> GetDoctorsAsync() 
+        public async Task<IEnumerable<DoctorDto>> GetDoctorsAsync()
         {
             var doctors = await _unitOfWork.DoctorRepository.GetAllAsync(includeProperties: "Address");
 
@@ -53,7 +54,5 @@ namespace QuickHealthClinic.Services.DoctorServices
             return doctorDto;
 
         }
-
-
     }
 }
