@@ -26,12 +26,9 @@ builder.Services.AddScoped<IDoctorService, DoctorService>();
 builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAuthorizationHandler, DoctorResourceOperationRequirementHandler>();
-builder.Services
-    .AddIdentity<Doctor, IdentityRole>()
-    .AddDefaultTokenProviders()
-    .AddEntityFrameworkStores<QuickHealthClinicContext>();
 
 
+   
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 
 var app = builder.Build();
