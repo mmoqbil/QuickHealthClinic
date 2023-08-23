@@ -3,6 +3,8 @@ using QuickHealthClinic.DataAccess.DbContexts;
 using QuickHealthClinic.DataAccess.Repositories.Interfaces;
 using QuickHealthClinic.DTOs.DoctorDtoFolder;
 using QuickHealthClinic.Configurations.Exceptions;
+using Microsoft.AspNetCore.Identity;
+using QuickHealthClinic.DataAccess.Entities;
 
 namespace QuickHealthClinic.Services.DoctorServices
 {
@@ -11,6 +13,7 @@ namespace QuickHealthClinic.Services.DoctorServices
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
         private readonly QuickHealthClinicContext _context;
+        private readonly IPasswordHasher<Doctor> _passwordHasher;
         public DoctorService(IUnitOfWork unitOfWork, IMapper mapper, QuickHealthClinicContext context)
         {
             _unitOfWork = unitOfWork;
@@ -49,5 +52,7 @@ namespace QuickHealthClinic.Services.DoctorServices
             return doctorDto;
 
         }
+
+
     }
 }
