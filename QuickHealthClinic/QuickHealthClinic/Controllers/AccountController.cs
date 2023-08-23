@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuickHealthClinic.DTOs.AccountDtoFolder;
 using QuickHealthClinic.Services.DoctorServices;
 
 namespace QuickHealthClinic.Controllers
@@ -12,9 +13,11 @@ namespace QuickHealthClinic.Controllers
         {
             _doctorService = doctorService;
         }
-        public IActionResult Index()
+        [HttpPost("doctor/register")]
+        public async Task<IActionResult> AddDoctorAsync([FromBody] CreateDoctorDto dto)
         {
-            return View();
+            var (doctorId, doctor) = await _doctorService.CreateDoctorAsync(dto);
+            return Created($"/api/doctors/{doctorId}", doctor);
         }
     }
 }
