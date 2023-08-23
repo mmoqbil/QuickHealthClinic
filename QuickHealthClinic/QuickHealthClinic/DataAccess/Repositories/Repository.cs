@@ -54,5 +54,10 @@ namespace QuickHealthClinic.DataAccess.Repositories
 
             return await query.FirstOrDefaultAsync();
         }
+
+        public async Task AddAsync(T entity)
+        {
+            await DbSet.AddAsync(entity);
+        }
     }
 }
