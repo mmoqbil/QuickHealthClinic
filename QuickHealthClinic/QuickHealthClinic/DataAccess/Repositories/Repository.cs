@@ -37,6 +37,7 @@ namespace QuickHealthClinic.DataAccess.Repositories
         {
             return await DbSet.FindAsync(id);
         }
+
         public async Task<T?> GetAsync(
         Expression<Func<T, bool>>? filter = null,
         string? includeProperties = null)
