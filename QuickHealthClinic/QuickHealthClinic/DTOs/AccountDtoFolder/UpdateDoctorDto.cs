@@ -1,6 +1,14 @@
-﻿namespace QuickHealthClinic.DTOs.AccountDtoFolder
+﻿using System.ComponentModel.DataAnnotations;
+
+namespace QuickHealthClinic.DTOs.AccountDtoFolder
 {
     public class UpdateDoctorDto
     {
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+
+        [Phone] public string PhoneNumber { get; set; }
+
+        [EmailAddress] public string Email { get; set; }
     }
 }
