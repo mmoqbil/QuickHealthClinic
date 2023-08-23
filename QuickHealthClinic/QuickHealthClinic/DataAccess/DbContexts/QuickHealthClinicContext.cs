@@ -1,10 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using QuickHealthClinic.DataAccess.Entities;
 using System.Diagnostics;
 
 namespace QuickHealthClinic.DataAccess.DbContexts
 {
-    public class QuickHealthClinicContext : DbContext
+    public class QuickHealthClinicContext : IdentityDbContext<Doctor>
     {
         public QuickHealthClinicContext(DbContextOptions<QuickHealthClinicContext> options) : base(options)
         {
