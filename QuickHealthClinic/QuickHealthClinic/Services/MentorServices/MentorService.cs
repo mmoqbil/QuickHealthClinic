@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Identity;
 using QuickHealthClinic.DataAccess.Entities;
 using QuickHealthClinic.DTOs.AccountDtoFolder;
 
-namespace QuickHealthClinic.Services.DoctorServices
+namespace QuickHealthClinic.Services.MentorServices
 {
     public class MentorService : IMentorService
     {

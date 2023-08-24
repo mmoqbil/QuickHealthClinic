@@ -1,7 +1,7 @@
 ﻿using QuickHealthClinic.DTOs.AccountDtoFolder;
 using QuickHealthClinic.DTOs.DoctorDtoFolder;
 
-namespace QuickHealthClinic.Services.DoctorServices
+namespace QuickHealthClinic.Services.MentorServices
 {
     public interface IMentorService
     {

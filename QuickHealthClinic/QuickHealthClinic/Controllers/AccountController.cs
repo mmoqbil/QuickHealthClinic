@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QuickHealthClinic.DTOs.AccountDtoFolder;
-using QuickHealthClinic.Services.DoctorServices;
+using QuickHealthClinic.Services.MentorServices;
 
 namespace QuickHealthClinic.Controllers
 {

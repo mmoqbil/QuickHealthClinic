@@ -7,7 +7,7 @@ using QuickHealthClinic.DataAccess.DbContexts;
 using QuickHealthClinic.DataAccess.Entities;
 using QuickHealthClinic.DataAccess.Repositories;
 using QuickHealthClinic.DataAccess.Repositories.Interfaces;
-using QuickHealthClinic.Services.DoctorServices;
+using QuickHealthClinic.Services.MentorServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
