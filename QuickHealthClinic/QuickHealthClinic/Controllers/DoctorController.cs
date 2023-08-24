@@ -18,7 +18,7 @@ namespace QuickHealthClinic.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MentorDto>>> GetAllDoctorsAsync()
         {
-            var doctors = await _doctorService.GetDoctorsAsync();
+            var doctors = await _doctorService.GetMentorsAsync();
             return Ok(doctors);
         }
 

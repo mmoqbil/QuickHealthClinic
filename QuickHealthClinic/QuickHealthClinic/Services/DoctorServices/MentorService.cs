@@ -23,7 +23,7 @@ namespace QuickHealthClinic.Services.DoctorServices
             _passwordHasher = passwordHasher;
         }
 
-        public async Task<IEnumerable<MentorDto>> GetDoctorsAsync()
+        public async Task<IEnumerable<MentorDto>> GetMentorsAsync()
         {
             var doctors = await _unitOfWork.DoctorRepository.GetAllAsync(includeProperties: "Address");
 
