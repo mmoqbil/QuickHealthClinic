@@ -8,6 +8,6 @@ namespace QuickHealthClinic.Services.DoctorServices
         Task<IEnumerable<MentorDto>> GetMentorsAsync();
         Task<IEnumerable<MentorDto>> GetMentorsBySpecializationAsync(string specialization);
         Task<MentorDto> GetMentorByIdAsync(int id);
-        Task<(int, CreateMentorDto)> CreateDoctorAsync(CreateMentorDto dto);
+        Task<(int, CreateMentorDto)> CreateMentorAsync(CreateMentorDto dto);
     }
 }

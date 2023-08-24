@@ -55,7 +55,7 @@ namespace QuickHealthClinic.Services.DoctorServices
 
         }
 
-        public async Task<(int, CreateMentorDto)> CreateDoctorAsync(CreateMentorDto dto)
+        public async Task<(int, CreateMentorDto)> CreateMentorAsync(CreateMentorDto dto)
         {
             var doctor = _mapper.Map<Mentor>(dto);
             var hashedPassword = _passwordHasher.HashPassword(doctor, dto.PasswordHash);
