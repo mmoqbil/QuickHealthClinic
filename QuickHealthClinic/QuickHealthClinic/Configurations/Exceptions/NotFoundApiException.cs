@@ -1,4 +1,4 @@
-﻿namespace QuickHealthClinic.Configurations.Exceptions
+﻿namespace QuickLifeCoachingClinic.Configurations.Exceptions
 {
     public class NotFoundApiException : ApiException
     {

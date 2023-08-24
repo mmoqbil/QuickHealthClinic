@@ -1,8 +1,8 @@
-﻿using QuickHealthClinic.DataAccess.DbContexts;
-using QuickHealthClinic.DataAccess.Entities;
-using QuickHealthClinic.DataAccess.Repositories.Interfaces;
+﻿using QuickLifeCoachingClinic.DataAccess.DbContexts;
+using QuickLifeCoachingClinic.DataAccess.Entities;
+using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
 
-namespace QuickHealthClinic.DataAccess.Repositories
+namespace QuickLifeCoachingClinic.DataAccess.Repositories
 {
     public class MentorRepository : Repository<Mentor>, IMentorRepository
     {

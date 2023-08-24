@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using QuickHealthClinic.DTOs.AccountDtoFolder;
-using QuickHealthClinic.Services.MentorServices;
+using QuickLifeCoachingClinic.DTOs.AccountDtoFolder;
+using QuickLifeCoachingClinic.Services.MentorServices;
 
-namespace QuickHealthClinic.Controllers
+namespace QuickLifeCoachingClinic.Controllers
 {
     [ApiController]
     [Route("/api/account")]

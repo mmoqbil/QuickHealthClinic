@@ -1,9 +1,9 @@
 ﻿using AutoMapper;
-using QuickHealthClinic.DataAccess.Entities;
-using QuickHealthClinic.DTOs.AccountDtoFolder;
-using QuickHealthClinic.DTOs.DoctorDtoFolder;
+using QuickLifeCoachingClinic.DataAccess.Entities;
+using QuickLifeCoachingClinic.DTOs.AccountDtoFolder;
+using QuickLifeCoachingClinic.DTOs.DoctorDtoFolder;
 
-namespace QuickHealthClinic.Configurations.Mapper
+namespace QuickLifeCoachingClinic.Configurations.Mapper
 {
     public class MappingProfile : Profile
     {

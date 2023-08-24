@@ -1,4 +1,4 @@
-﻿namespace QuickHealthClinic.DataAccess.Entities
+﻿namespace QuickLifeCoachingClinic.DataAccess.Entities
 {
     public enum Role
     {

@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Authorization;
 
-namespace QuickHealthClinic.Authorization
+namespace QuickLifeCoachingClinic.Authorization
 {
     public enum ResourceOperation
     {

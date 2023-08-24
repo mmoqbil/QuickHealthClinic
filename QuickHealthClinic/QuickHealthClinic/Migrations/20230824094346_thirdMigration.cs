@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 #nullable disable
 
-namespace QuickHealthClinic.Migrations
+namespace QuickLifeCoachingClinic.Migrations
 {
     /// <inheritdoc />
     public partial class thirdMigration : Migration

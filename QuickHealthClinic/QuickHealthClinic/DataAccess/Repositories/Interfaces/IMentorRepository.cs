@@ -1,6 +1,6 @@
-﻿using QuickHealthClinic.DataAccess.Entities;
+﻿using QuickLifeCoachingClinic.DataAccess.Entities;
 
-namespace QuickHealthClinic.DataAccess.Repositories.Interfaces
+namespace QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces
 {
     public interface IMentorRepository : IRepository<Mentor>
     {

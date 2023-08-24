@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using QuickHealthClinic.DataAccess.DbContexts;
+using QuickLifeCoachingClinic.DataAccess.DbContexts;
 
 #nullable disable
 
-namespace QuickHealthClinic.Migrations
+namespace QuickLifeCoachingClinic.Migrations
 {
     [DbContext(typeof(QuickHealthClinicContext))]
     partial class QuickHealthClinicContextModelSnapshot : ModelSnapshot

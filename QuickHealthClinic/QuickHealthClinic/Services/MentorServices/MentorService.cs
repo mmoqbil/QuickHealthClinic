@@ -1,13 +1,13 @@
 ﻿using AutoMapper;
-using QuickHealthClinic.DataAccess.DbContexts;
-using QuickHealthClinic.DataAccess.Repositories.Interfaces;
-using QuickHealthClinic.DTOs.DoctorDtoFolder;
-using QuickHealthClinic.Configurations.Exceptions;
+using QuickLifeCoachingClinic.DataAccess.DbContexts;
+using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
+using QuickLifeCoachingClinic.DTOs.DoctorDtoFolder;
+using QuickLifeCoachingClinic.Configurations.Exceptions;
 using Microsoft.AspNetCore.Identity;
-using QuickHealthClinic.DataAccess.Entities;
-using QuickHealthClinic.DTOs.AccountDtoFolder;
+using QuickLifeCoachingClinic.DataAccess.Entities;
+using QuickLifeCoachingClinic.DTOs.AccountDtoFolder;
 
-namespace QuickHealthClinic.Services.MentorServices
+namespace QuickLifeCoachingClinic.Services.MentorServices
 {
     public class MentorService : IMentorService
     {

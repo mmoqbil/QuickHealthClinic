@@ -1,6 +1,6 @@
 ﻿using System.Linq.Expressions;
 
-namespace QuickHealthClinic.DataAccess.Repositories.Interfaces
+namespace QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces
 {
     public interface IRepository<T> where T : class
     {

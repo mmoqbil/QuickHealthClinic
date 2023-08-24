@@ -2,12 +2,12 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
-using QuickHealthClinic.Authorization;
-using QuickHealthClinic.DataAccess.DbContexts;
-using QuickHealthClinic.DataAccess.Entities;
-using QuickHealthClinic.DataAccess.Repositories;
-using QuickHealthClinic.DataAccess.Repositories.Interfaces;
-using QuickHealthClinic.Services.MentorServices;
+using QuickLifeCoachingClinic.Authorization;
+using QuickLifeCoachingClinic.DataAccess.DbContexts;
+using QuickLifeCoachingClinic.DataAccess.Entities;
+using QuickLifeCoachingClinic.DataAccess.Repositories;
+using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
+using QuickLifeCoachingClinic.Services.MentorServices;
 
 var builder = WebApplication.CreateBuilder(args);
 

@@ -1,5 +1,5 @@
 ﻿
-namespace QuickHealthClinic.DataAccess.Entities
+namespace QuickLifeCoachingClinic.DataAccess.Entities
 {
     public class Mentor : Person
     {

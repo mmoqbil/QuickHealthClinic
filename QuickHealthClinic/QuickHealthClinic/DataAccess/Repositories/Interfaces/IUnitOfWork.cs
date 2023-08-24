@@ -1,4 +1,4 @@
-﻿namespace QuickHealthClinic.DataAccess.Repositories.Interfaces
+﻿namespace QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces
 {
     public interface IUnitOfWork : IDisposable
     {

@@ -2,7 +2,7 @@
 
 #nullable disable
 
-namespace QuickHealthClinic.Migrations
+namespace QuickLifeCoachingClinic.Migrations
 {
     /// <inheritdoc />
     public partial class AddedRoles : Migration

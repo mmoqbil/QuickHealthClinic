@@ -1,8 +1,8 @@
 ﻿using Microsoft.AspNetCore.Authorization;
-using QuickHealthClinic.DataAccess.Entities;
+using QuickLifeCoachingClinic.DataAccess.Entities;
 using System.Security.Claims;
 
-namespace QuickHealthClinic.Authorization
+namespace QuickLifeCoachingClinic.Authorization
 {
     public class MentorResourceOperationRequirementHandler : AuthorizationHandler<ResourceOperationRequirement, Mentor>
     {

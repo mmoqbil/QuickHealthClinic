@@ -1,9 +1,9 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using QuickHealthClinic.DataAccess.Entities;
+using QuickLifeCoachingClinic.DataAccess.Entities;
 using System.Diagnostics;
 
-namespace QuickHealthClinic.DataAccess.DbContexts
+namespace QuickLifeCoachingClinic.DataAccess.DbContexts
 {
     public class QuickHealthClinicContext : IdentityDbContext<Mentor>
     {

@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel.DataAnnotations;
 
-namespace QuickHealthClinic.DTOs.AccountDtoFolder
+namespace QuickLifeCoachingClinic.DTOs.AccountDtoFolder
 {
     public class UpdateMentorDto
     {

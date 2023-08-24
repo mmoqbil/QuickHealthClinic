@@ -5,11 +5,11 @@ using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
-using QuickHealthClinic.DataAccess.DbContexts;
+using QuickLifeCoachingClinic.DataAccess.DbContexts;
 
 #nullable disable
 
-namespace QuickHealthClinic.Migrations
+namespace QuickLifeCoachingClinic.Migrations
 {
     [DbContext(typeof(QuickHealthClinicContext))]
     [Migration("20230824094346_thirdMigration")]

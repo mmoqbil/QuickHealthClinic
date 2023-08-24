@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 using System.ComponentModel.DataAnnotations;
 
-namespace QuickHealthClinic.DataAccess.Entities
+namespace QuickLifeCoachingClinic.DataAccess.Entities
 {
     public abstract class Person : IdentityUser
     {

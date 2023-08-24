@@ -1,9 +1,9 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using QuickHealthClinic.DataAccess.DbContexts;
-using QuickHealthClinic.DataAccess.Repositories.Interfaces;
+using QuickLifeCoachingClinic.DataAccess.DbContexts;
+using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
 using System.Linq.Expressions;
 
-namespace QuickHealthClinic.DataAccess.Repositories
+namespace QuickLifeCoachingClinic.DataAccess.Repositories
 {
     public abstract class Repository<T> : IRepository<T> where T : class
     {
