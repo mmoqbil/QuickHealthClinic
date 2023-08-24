@@ -25,46 +25,46 @@ namespace QuickLifeCoachingClinic.Services.MentorServices
 
         public async Task<IEnumerable<MentorDto>> GetMentorsAsync()
         {
-            var doctors = await _unitOfWork.MentorRepository.GetAllAsync(includeProperties: "Address");
+            var mentors = await _unitOfWork.MentorRepository.GetAllAsync(includeProperties: "Address");
 
-            var doctorsDto = _mapper.Map<List<MentorDto>>(doctors);
+            var mentorsDto = _mapper.Map<List<MentorDto>>(mentors);
 
-            return doctorsDto;
+            return mentorsDto;
         }
         public async Task<IEnumerable<MentorDto>> GetMentorsBySpecializationAsync(string specialization)
         {
-            var doctors = await _unitOfWork.MentorRepository
+            var mentors = await _unitOfWork.MentorRepository
                 .GetAllAsync(d => d.Specialist == specialization, includeProperties: "Adress");
 
-            var doctorsDto = _mapper.Map<List<MentorDto>>(doctors);
+            var mentorsDto = _mapper.Map<List<MentorDto>>(mentors);
 
-            return doctorsDto;
+            return mentorsDto;
         }
 
         public async Task<MentorDto> GetMentorByIdAsync(int id)
         {
-            var doctor = await _unitOfWork.MentorRepository
+            var mentor = await _unitOfWork.MentorRepository
             .GetAsync(d => d.Id == id, "Address");
 
-            if (doctor is null)
+            if (mentor is null)
                 throw new NotFoundApiException(nameof(MentorDto), id.ToString());
 
-            var doctorDto = _mapper.Map<MentorDto>(doctor);
+            var mentorDto = _mapper.Map<MentorDto>(mentor);
 
-            return doctorDto;
+            return mentorDto;
 
         }
 
         public async Task<(int, CreateMentorDto)> CreateMentorAsync(CreateMentorDto dto)
         {
-            var doctor = _mapper.Map<Mentor>(dto);
-            var hashedPassword = _passwordHasher.HashPassword(doctor, dto.PasswordHash);
-            doctor.PasswordHash = hashedPassword;
+            var mentor = _mapper.Map<Mentor>(dto);
+            var hashedPassword = _passwordHasher.HashPassword(mentor, dto.PasswordHash);
+            mentor.PasswordHash = hashedPassword;
 
-            await _unitOfWork.MentorRepository.AddAsync(doctor);
+            await _unitOfWork.MentorRepository.AddAsync(mentor);
             await _unitOfWork.SaveAsync();
 
-            return (doctor.Id, _mapper.Map<CreateMentorDto>(doctor));
+            return (mentor.Id, _mapper.Map<CreateMentorDto>(mentor));
         }
     }
 }
