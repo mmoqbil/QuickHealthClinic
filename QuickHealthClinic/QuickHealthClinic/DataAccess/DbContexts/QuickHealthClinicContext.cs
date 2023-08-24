@@ -10,7 +10,7 @@ namespace QuickHealthClinic.DataAccess.DbContexts
         public QuickHealthClinicContext(DbContextOptions<QuickHealthClinicContext> options) : base(options)
         {
         }
-        public DbSet<Mentor> Doctors { get; set; }
+        public DbSet<Mentor> Mentors { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
