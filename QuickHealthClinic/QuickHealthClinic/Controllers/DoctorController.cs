@@ -33,7 +33,7 @@ namespace QuickHealthClinic.Controllers
         [HttpGet("{id}")]
         public async Task<ActionResult<MentorDto>> GetDoctorByIdAsync([FromRoute] int id)
         {
-            var doctor = await _doctorService.GetDoctorByIdAsync(id);
+            var doctor = await _doctorService.GetMentorByIdAsync(id);
             return Ok(doctor);
         }
     }

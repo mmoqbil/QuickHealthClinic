@@ -41,7 +41,7 @@ namespace QuickHealthClinic.Services.DoctorServices
             return doctorsDto;
         }
 
-        public async Task<MentorDto> GetDoctorByIdAsync(int id)
+        public async Task<MentorDto> GetMentorByIdAsync(int id)
         {
             var doctor = await _unitOfWork.DoctorRepository
             .GetAsync(d => d.Id == id, "Address");
