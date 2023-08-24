@@ -2,7 +2,7 @@
 {
     public enum Role
     {
-        Doctor,
-        Patient
+        Mentor,
+        Student
     }
 }
