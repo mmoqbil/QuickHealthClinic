@@ -74,11 +74,21 @@ namespace QuickLifeCoachingClinic.Services.MentorServices
             if (mentor is null)
                 throw new NotFoundApiException(nameof(MentorDto), id.ToString());
 
-
             _mapper.Map(dto, mentor);
             await _unitOfWork.SaveAsync();
         }
 
+        public async Task DeleteMentorAsync(int id)
+        {
+            var mentor = await _unitOfWork.MentorRepository
+                .GetAsync(id);
+
+            if (mentor is null)
+                throw new NotFoundApiException(nameof(MentorDto), id.ToString());
+
+            _unitOfWork.MentorRepository.Remove(mentor);
+            await _unitOfWork.SaveAsync();
+        }
 
     }
 }
