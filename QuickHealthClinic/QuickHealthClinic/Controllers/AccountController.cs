@@ -13,11 +13,13 @@ namespace QuickLifeCoachingClinic.Controllers
         {
             _doctorService = doctorService;
         }
-        [HttpPost("doctor/register")]
+
+        [HttpPost("mentor/register")]
         public async Task<IActionResult> AddDoctorAsync([FromBody] CreateMentorDto dto)
         {
             var (doctorId, doctor) = await _doctorService.CreateMentorAsync(dto);
             return Created($"/api/doctors/{doctorId}", doctor);
         }
+
     }
 }
