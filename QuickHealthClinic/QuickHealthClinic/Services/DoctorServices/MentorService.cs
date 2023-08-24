@@ -31,7 +31,7 @@ namespace QuickHealthClinic.Services.DoctorServices
 
             return doctorsDto;
         }
-        public async Task<IEnumerable<MentorDto>> GetDoctorsBySpecializationAsync(string specialization)
+        public async Task<IEnumerable<MentorDto>> GetMentorsBySpecializationAsync(string specialization)
         {
             var doctors = await _unitOfWork.DoctorRepository
                 .GetAllAsync(d => d.Specialist == specialization, includeProperties: "Adress");
