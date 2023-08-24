@@ -29,7 +29,7 @@ namespace QuickLifeCoachingClinic.Controllers
         }
 
         [HttpDelete("mentor/{id}")]
-        public async Task<IActionResult> DeleteDoctorByIdAsync([FromRoute] int id)
+        public async Task<IActionResult> DeleteMentorByIdAsync([FromRoute] int id)
         {
             await _doctorService.DeleteMentorAsync(id);
             return NoContent();
