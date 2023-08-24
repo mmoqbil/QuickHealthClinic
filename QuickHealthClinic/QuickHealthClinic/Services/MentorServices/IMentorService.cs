@@ -9,5 +9,6 @@ namespace QuickLifeCoachingClinic.Services.MentorServices
         Task<IEnumerable<MentorDto>> GetMentorsBySpecializationAsync(string specialization);
         Task<MentorDto> GetMentorByIdAsync(int id);
         Task<(int, CreateMentorDto)> CreateMentorAsync(CreateMentorDto dto);
+        Task UpdateMentorAsync(int id, UpdateMentorDto dto);
     }
 }
