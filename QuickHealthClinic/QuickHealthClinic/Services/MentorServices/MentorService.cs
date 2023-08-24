@@ -66,7 +66,7 @@ namespace QuickLifeCoachingClinic.Services.MentorServices
 
             return (mentor.Id, _mapper.Map<CreateMentorDto>(mentor));
         }
-        public async Task UpdateAsync(int id, UpdateMentorDto dto)
+        public async Task UpdateMentorAsync(int id, UpdateMentorDto dto)
         {
             var mentor = await _unitOfWork.MentorRepository
                 .GetAsync(id);
