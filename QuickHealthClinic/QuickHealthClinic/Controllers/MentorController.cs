@@ -5,25 +5,25 @@ using QuickHealthClinic.Services.DoctorServices;
 
 namespace QuickHealthClinic.Controllers
 {
-    [Route("api/doctors")]
+    [Route("api/mentors")]
     [ApiController]
     public class MentorController : ControllerBase
     {
         private readonly IMentorService _mentorService;
-        public MentorController(IMentorService doctorService)
+        public MentorController(IMentorService mentorService)
         {
-            _mentorService = doctorService;
+            _mentorService = mentorService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MentorDto>>> GetAllDoctorsAsync()
+        public async Task<ActionResult<IEnumerable<MentorDto>>> GetAllMentorrsAsync()
         {
             var doctors = await _mentorService.GetMentorsAsync();
             return Ok(doctors);
         }
 
         [HttpGet("search/{specialization}")]
-        public async Task<ActionResult<IEnumerable<MentorDto>>> GetDoctorsBySpecializationAsync(
+        public async Task<ActionResult<IEnumerable<MentorDto>>> GetMentorsBySpecializationAsync(
         [FromRoute] string specialization)
         {
             var doctors = await _mentorService.GetMentorsBySpecializationAsync(specialization);
@@ -31,7 +31,7 @@ namespace QuickHealthClinic.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<MentorDto>> GetDoctorByIdAsync([FromRoute] int id)
+        public async Task<ActionResult<MentorDto>> GetMentorByIdAsync([FromRoute] int id)
         {
             var doctor = await _mentorService.GetMentorByIdAsync(id);
             return Ok(doctor);
