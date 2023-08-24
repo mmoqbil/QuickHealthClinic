@@ -8,7 +8,7 @@ namespace QuickHealthClinic.DataAccess.Repositories
     {
         public MentorRepository(QuickHealthClinicContext context) : base(context)
         {
-            DbSet = context.Doctors;
+            DbSet = context.Mentors;
         }
     }
 }
