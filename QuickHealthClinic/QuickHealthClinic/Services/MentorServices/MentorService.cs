@@ -66,6 +66,18 @@ namespace QuickLifeCoachingClinic.Services.MentorServices
 
             return (mentor.Id, _mapper.Map<CreateMentorDto>(mentor));
         }
+        public async Task UpdateAsync(int id, UpdateMentorDto dto)
+        {
+            var mentor = await _unitOfWork.MentorRepository
+                .GetAsync(id);
+
+            if (mentor is null)
+                throw new NotFoundApiException(nameof(MentorDto), id.ToString());
+
+
+            _mapper.Map(dto, mentor);
+            await _unitOfWork.SaveAsync();
+        }
 
 
     }
