@@ -4,7 +4,7 @@ using System.Security.Claims;
 
 namespace QuickHealthClinic.Authorization
 {
-    public class DoctorResourceOperationRequirementHandler : AuthorizationHandler<ResourceOperationRequirement, Mentor>
+    public class MentorResourceOperationRequirementHandler : AuthorizationHandler<ResourceOperationRequirement, Mentor>
     {
         protected override Task HandleRequirementAsync(AuthorizationHandlerContext context,
         ResourceOperationRequirement requirement,

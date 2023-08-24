@@ -25,7 +25,7 @@ builder.Services.AddSwaggerGen();
 builder.Services.AddScoped<IMentorService, MentorService>();
 builder.Services.AddScoped<IMentorRepository, MentorRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
-builder.Services.AddScoped<IAuthorizationHandler, DoctorResourceOperationRequirementHandler>();
+builder.Services.AddScoped<IAuthorizationHandler, MentorResourceOperationRequirementHandler>();
 builder.Services
         .AddIdentity<Mentor, IdentityRole>()
         .AddDefaultTokenProviders()
