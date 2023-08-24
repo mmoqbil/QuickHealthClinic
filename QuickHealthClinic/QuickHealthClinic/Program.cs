@@ -22,12 +22,12 @@ builder.Services.AddDbContext<QuickHealthClinicContext>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddScoped<IDoctorService, DoctorService>();
-builder.Services.AddScoped<IDoctorRepository, DoctorRepository>();
+builder.Services.AddScoped<IMentorService, MentorService>();
+builder.Services.AddScoped<IMentorRepository, MentorRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAuthorizationHandler, DoctorResourceOperationRequirementHandler>();
 builder.Services
-        .AddIdentity<Doctor, IdentityRole>()
+        .AddIdentity<Mentor, IdentityRole>()
         .AddDefaultTokenProviders()
         .AddEntityFrameworkStores<QuickHealthClinicContext>();
 

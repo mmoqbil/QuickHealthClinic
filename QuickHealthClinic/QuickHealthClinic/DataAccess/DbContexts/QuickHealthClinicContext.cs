@@ -5,12 +5,12 @@ using System.Diagnostics;
 
 namespace QuickHealthClinic.DataAccess.DbContexts
 {
-    public class QuickHealthClinicContext : IdentityDbContext<Doctor>
+    public class QuickHealthClinicContext : IdentityDbContext<Mentor>
     {
         public QuickHealthClinicContext(DbContextOptions<QuickHealthClinicContext> options) : base(options)
         {
         }
-        public DbSet<Doctor> Doctors { get; set; }
+        public DbSet<Mentor> Doctors { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {

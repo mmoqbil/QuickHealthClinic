@@ -1,7 +1,7 @@
 ﻿
 namespace QuickHealthClinic.DataAccess.Entities
 {
-    public class Doctor : Person
+    public class Mentor : Person
     {
         public string Specialist { get; set; } = string.Empty;
         public string Description { get; set; } = string.Empty;

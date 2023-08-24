@@ -2,7 +2,7 @@
 
 namespace QuickHealthClinic.DTOs.AccountDtoFolder
 {
-    public class UpdateDoctorDto
+    public class UpdateMentorDto
     {
         public string FirstName { get; set; }
         public string LastName { get; set; }

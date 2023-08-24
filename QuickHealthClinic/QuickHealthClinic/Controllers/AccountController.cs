@@ -8,13 +8,13 @@ namespace QuickHealthClinic.Controllers
     [Route("/api/account")]
     public class AccountController : Controller
     {
-        private readonly IDoctorService _doctorService;
-        public AccountController(IDoctorService doctorService)
+        private readonly IMentorService _doctorService;
+        public AccountController(IMentorService doctorService)
         {
             _doctorService = doctorService;
         }
         [HttpPost("doctor/register")]
-        public async Task<IActionResult> AddDoctorAsync([FromBody] CreateDoctorDto dto)
+        public async Task<IActionResult> AddDoctorAsync([FromBody] CreateMentorDto dto)
         {
             var (doctorId, doctor) = await _doctorService.CreateDoctorAsync(dto);
             return Created($"/api/doctors/{doctorId}", doctor);

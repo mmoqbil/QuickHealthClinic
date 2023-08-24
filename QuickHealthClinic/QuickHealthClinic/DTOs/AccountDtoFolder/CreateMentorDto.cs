@@ -1,8 +1,7 @@
-﻿namespace QuickHealthClinic.DTOs.DoctorDtoFolder
+﻿namespace QuickHealthClinic.DTOs.AccountDtoFolder
 {
-    public class DoctorDto
+    public class CreateMentorDto
     {
-        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
         public string PhoneNumber { get; set; }
@@ -11,5 +10,7 @@
         public string Street { get; set; }
         public string PostalCode { get; set; }
         public string Specialist { get; set; }
+        public string PasswordHash { get; set; }
+        public string ConfirmPassword { get; set; }
     }
 }

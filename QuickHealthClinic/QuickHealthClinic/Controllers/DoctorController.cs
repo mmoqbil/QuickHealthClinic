@@ -9,21 +9,21 @@ namespace QuickHealthClinic.Controllers
     [ApiController]
     public class DoctorController : ControllerBase
     {
-        private readonly IDoctorService _doctorService;
-        public DoctorController(IDoctorService doctorService)
+        private readonly IMentorService _doctorService;
+        public DoctorController(IMentorService doctorService)
         {
             _doctorService = doctorService;
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<DoctorDto>>> GetAllDoctorsAsync()
+        public async Task<ActionResult<IEnumerable<MentorDto>>> GetAllDoctorsAsync()
         {
             var doctors = await _doctorService.GetDoctorsAsync();
             return Ok(doctors);
         }
 
         [HttpGet("search/{specialization}")]
-        public async Task<ActionResult<IEnumerable<DoctorDto>>> GetDoctorsBySpecializationAsync(
+        public async Task<ActionResult<IEnumerable<MentorDto>>> GetDoctorsBySpecializationAsync(
         [FromRoute] string specialization)
         {
             var doctors = await _doctorService.GetDoctorsBySpecializationAsync(specialization);
@@ -31,7 +31,7 @@ namespace QuickHealthClinic.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<DoctorDto>> GetDoctorByIdAsync([FromRoute] int id)
+        public async Task<ActionResult<MentorDto>> GetDoctorByIdAsync([FromRoute] int id)
         {
             var doctor = await _doctorService.GetDoctorByIdAsync(id);
             return Ok(doctor);

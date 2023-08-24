@@ -2,7 +2,7 @@
 {
     public interface IUnitOfWork : IDisposable
     {
-        IDoctorRepository DoctorRepository { get; }
+        IMentorRepository DoctorRepository { get; }
         Task SaveAsync();
     }
 }

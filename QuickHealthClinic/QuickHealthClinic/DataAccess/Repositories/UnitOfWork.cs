@@ -9,9 +9,9 @@ namespace QuickHealthClinic.DataAccess.Repositories
         public UnitOfWork(QuickHealthClinicContext context)
         {
             _context = context;
-            DoctorRepository = new DoctorRepository(_context);
+            DoctorRepository = new MentorRepository(_context);
         }
-        public IDoctorRepository DoctorRepository { get; }
+        public IMentorRepository DoctorRepository { get; }
 
         public void Dispose()
         {
