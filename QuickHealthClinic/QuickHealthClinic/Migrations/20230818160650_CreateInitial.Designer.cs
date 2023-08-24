@@ -10,7 +10,7 @@ using QuickLifeCoachingClinic.DataAccess.DbContexts;
 
 namespace QuickLifeCoachingClinic.Migrations
 {
-    [DbContext(typeof(QuickHealthClinicContext))]
+    [DbContext(typeof(QuickLifeCoachingClinicContext))]
     [Migration("20230818160650_CreateInitial")]
     partial class CreateInitial
     {

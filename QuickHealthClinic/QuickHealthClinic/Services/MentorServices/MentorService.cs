@@ -13,9 +13,9 @@ namespace QuickLifeCoachingClinic.Services.MentorServices
     {
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
-        private readonly QuickHealthClinicContext _context;
+        private readonly QuickLifeCoachingClinicContext _context;
         private readonly IPasswordHasher<Mentor> _passwordHasher;
-        public MentorService(IUnitOfWork unitOfWork, IMapper mapper, QuickHealthClinicContext context, IPasswordHasher<Mentor> passwordHasher)
+        public MentorService(IUnitOfWork unitOfWork, IMapper mapper, QuickLifeCoachingClinicContext context, IPasswordHasher<Mentor> passwordHasher)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;

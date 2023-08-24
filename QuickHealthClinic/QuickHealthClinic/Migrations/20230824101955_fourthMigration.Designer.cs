@@ -11,7 +11,7 @@ using QuickLifeCoachingClinic.DataAccess.DbContexts;
 
 namespace QuickLifeCoachingClinic.Migrations
 {
-    [DbContext(typeof(QuickHealthClinicContext))]
+    [DbContext(typeof(QuickLifeCoachingClinicContext))]
     [Migration("20230824101955_fourthMigration")]
     partial class fourthMigration
     {

@@ -5,8 +5,8 @@ namespace QuickLifeCoachingClinic.DataAccess.Repositories
 {
     public class UnitOfWork : IUnitOfWork
     {
-        private readonly QuickHealthClinicContext _context;
-        public UnitOfWork(QuickHealthClinicContext context)
+        private readonly QuickLifeCoachingClinicContext _context;
+        public UnitOfWork(QuickLifeCoachingClinicContext context)
         {
             _context = context;
             MentorRepository = new MentorRepository(_context);

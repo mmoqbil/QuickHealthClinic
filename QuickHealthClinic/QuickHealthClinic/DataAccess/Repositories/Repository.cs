@@ -7,9 +7,9 @@ namespace QuickLifeCoachingClinic.DataAccess.Repositories
 {
     public abstract class Repository<T> : IRepository<T> where T : class
     {
-        protected readonly QuickHealthClinicContext Context;
+        protected readonly QuickLifeCoachingClinicContext Context;
         protected DbSet<T> DbSet;
-        protected Repository(QuickHealthClinicContext context)
+        protected Repository(QuickLifeCoachingClinicContext context)
         {
             Context = context;
         }

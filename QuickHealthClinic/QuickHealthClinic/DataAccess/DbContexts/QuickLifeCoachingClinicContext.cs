@@ -5,9 +5,9 @@ using System.Diagnostics;
 
 namespace QuickLifeCoachingClinic.DataAccess.DbContexts
 {
-    public class QuickHealthClinicContext : IdentityDbContext<Mentor>
+    public class QuickLifeCoachingClinicContext : IdentityDbContext<Mentor>
     {
-        public QuickHealthClinicContext(DbContextOptions<QuickHealthClinicContext> options) : base(options)
+        public QuickLifeCoachingClinicContext(DbContextOptions<QuickLifeCoachingClinicContext> options) : base(options)
         {
         }
         public DbSet<Mentor> Mentors { get; set; }

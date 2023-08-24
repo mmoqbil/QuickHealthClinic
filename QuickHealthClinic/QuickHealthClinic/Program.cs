@@ -15,7 +15,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddDbContext<QuickHealthClinicContext>(options =>
+builder.Services.AddDbContext<QuickLifeCoachingClinicContext>(options =>
 {
     options.UseSqlServer(builder.Configuration.GetConnectionString("QuickHealthClinicConnection"));
 });
@@ -29,7 +29,7 @@ builder.Services.AddScoped<IAuthorizationHandler, MentorResourceOperationRequire
 builder.Services
         .AddIdentity<Mentor, IdentityRole>()
         .AddDefaultTokenProviders()
-        .AddEntityFrameworkStores<QuickHealthClinicContext>();
+        .AddEntityFrameworkStores<QuickLifeCoachingClinicContext>();
 
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());

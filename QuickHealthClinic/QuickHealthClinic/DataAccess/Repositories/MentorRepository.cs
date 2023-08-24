@@ -6,7 +6,7 @@ namespace QuickLifeCoachingClinic.DataAccess.Repositories
 {
     public class MentorRepository : Repository<Mentor>, IMentorRepository
     {
-        public MentorRepository(QuickHealthClinicContext context) : base(context)
+        public MentorRepository(QuickLifeCoachingClinicContext context) : base(context)
         {
             DbSet = context.Mentors;
         }

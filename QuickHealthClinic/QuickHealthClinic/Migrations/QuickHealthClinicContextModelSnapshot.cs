@@ -10,7 +10,7 @@ using QuickLifeCoachingClinic.DataAccess.DbContexts;
 
 namespace QuickLifeCoachingClinic.Migrations
 {
-    [DbContext(typeof(QuickHealthClinicContext))]
+    [DbContext(typeof(QuickLifeCoachingClinicContext))]
     partial class QuickHealthClinicContextModelSnapshot : ModelSnapshot
     {
         protected override void BuildModel(ModelBuilder modelBuilder)
