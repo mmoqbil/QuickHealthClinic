@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "eyF55JjjFr3cOvA40ViJflc+8ZYJagKvuraXSGK7T0kYdPOMm4N6Q5AEQUFwy2yW0BBjMIJowrlekFt96T2frg==",
+  "dgSpecHash": "8y+1+D4sqm8W8Kd0RpZJkeeQrYsvfTymfBZ7qJ74kbcNzB1GH/LTzQyG5tK4TwhJoN1MybdRGZG5vP1pu9425A==",
   "success": true,
-  "projectFilePath": "C:\\reactcsharp\\QuickHealthClinic\\QuickHealthClinic2\\QuickHealthClinic\\QuickHealthClinic\\QuickHealthClinic.csproj",
+  "projectFilePath": "C:\\reactcsharp\\QuickHealthClinic\\QuickHealthClinic2\\QuickHealthClinic\\QuickHealthClinic\\QuickLifeCoachingClinic.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\user\\.nuget\\packages\\automapper\\12.0.1\\automapper.12.0.1.nupkg.sha512",
     "C:\\Users\\user\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\12.0.1\\automapper.extensions.microsoft.dependencyinjection.12.0.1.nupkg.sha512",

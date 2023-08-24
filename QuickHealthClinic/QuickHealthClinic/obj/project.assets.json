@@ -3679,9 +3679,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\reactcsharp\\QuickHealthClinic\\QuickHealthClinic2\\QuickHealthClinic\\QuickHealthClinic\\QuickHealthClinic.csproj",
-      "projectName": "QuickHealthClinic",
-      "projectPath": "C:\\reactcsharp\\QuickHealthClinic\\QuickHealthClinic2\\QuickHealthClinic\\QuickHealthClinic\\QuickHealthClinic.csproj",
+      "projectUniqueName": "C:\\reactcsharp\\QuickHealthClinic\\QuickHealthClinic2\\QuickHealthClinic\\QuickHealthClinic\\QuickLifeCoachingClinic.csproj",
+      "projectName": "QuickLifeCoachingClinic",
+      "projectPath": "C:\\reactcsharp\\QuickHealthClinic\\QuickHealthClinic2\\QuickHealthClinic\\QuickHealthClinic\\QuickLifeCoachingClinic.csproj",
       "packagesPath": "C:\\Users\\user\\.nuget\\packages\\",
       "outputPath": "C:\\reactcsharp\\QuickHealthClinic\\QuickHealthClinic2\\QuickHealthClinic\\QuickHealthClinic\\obj\\",
       "projectStyle": "PackageReference",
