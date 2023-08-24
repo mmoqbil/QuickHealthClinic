@@ -7,10 +7,10 @@ namespace QuickHealthClinic.Controllers
 {
     [Route("api/doctors")]
     [ApiController]
-    public class DoctorController : ControllerBase
+    public class MentorController : ControllerBase
     {
         private readonly IMentorService _doctorService;
-        public DoctorController(IMentorService doctorService)
+        public MentorController(IMentorService doctorService)
         {
             _doctorService = doctorService;
         }
