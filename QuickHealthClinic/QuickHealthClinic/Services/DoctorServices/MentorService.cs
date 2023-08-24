@@ -25,7 +25,7 @@ namespace QuickHealthClinic.Services.DoctorServices
 
         public async Task<IEnumerable<MentorDto>> GetMentorsAsync()
         {
-            var doctors = await _unitOfWork.DoctorRepository.GetAllAsync(includeProperties: "Address");
+            var doctors = await _unitOfWork.MentorRepository.GetAllAsync(includeProperties: "Address");
 
             var doctorsDto = _mapper.Map<List<MentorDto>>(doctors);
 
@@ -33,7 +33,7 @@ namespace QuickHealthClinic.Services.DoctorServices
         }
         public async Task<IEnumerable<MentorDto>> GetMentorsBySpecializationAsync(string specialization)
         {
-            var doctors = await _unitOfWork.DoctorRepository
+            var doctors = await _unitOfWork.MentorRepository
                 .GetAllAsync(d => d.Specialist == specialization, includeProperties: "Adress");
 
             var doctorsDto = _mapper.Map<List<MentorDto>>(doctors);
@@ -43,7 +43,7 @@ namespace QuickHealthClinic.Services.DoctorServices
 
         public async Task<MentorDto> GetMentorByIdAsync(int id)
         {
-            var doctor = await _unitOfWork.DoctorRepository
+            var doctor = await _unitOfWork.MentorRepository
             .GetAsync(d => d.Id == id, "Address");
 
             if (doctor is null)
@@ -61,7 +61,7 @@ namespace QuickHealthClinic.Services.DoctorServices
             var hashedPassword = _passwordHasher.HashPassword(doctor, dto.PasswordHash);
             doctor.PasswordHash = hashedPassword;
 
-            await _unitOfWork.DoctorRepository.AddAsync(doctor);
+            await _unitOfWork.MentorRepository.AddAsync(doctor);
             await _unitOfWork.SaveAsync();
 
             return (doctor.Id, _mapper.Map<CreateMentorDto>(doctor));
