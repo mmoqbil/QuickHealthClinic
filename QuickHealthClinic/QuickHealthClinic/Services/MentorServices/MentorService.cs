@@ -99,5 +99,24 @@ namespace QuickLifeCoachingClinic.Services.MentorServices
 
             return mentor.Certificates.Select(c => c.Filename);
         }
+
+        public async Task<bool> AddCertificate(string filename, int id)
+        {
+            var mentor = await _unitOfWork.MentorRepository.GetAsync(id);
+
+            if (mentor is null)
+                return false;
+
+            var certificate = new Certificate
+            {
+                Mentor = mentor,
+                Filename = filename
+            };
+
+            mentor.Certificates.Add(certificate);
+            await _unitOfWork.SaveAsync();
+
+            return true;
+        }
     }
 }
