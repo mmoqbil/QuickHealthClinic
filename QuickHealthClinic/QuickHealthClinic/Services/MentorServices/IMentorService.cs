@@ -11,5 +11,6 @@ namespace QuickLifeCoachingClinic.Services.MentorServices
         Task<(int, CreateMentorDto)> CreateMentorAsync(CreateMentorDto dto);
         Task UpdateMentorAsync(int id, UpdateMentorDto dto);
         Task DeleteMentorAsync(int id);
+        Task<IEnumerable<string>?> GetCertificates(int id);
     }
 }
