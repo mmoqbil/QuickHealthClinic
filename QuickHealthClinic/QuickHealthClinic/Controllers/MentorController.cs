@@ -36,5 +36,12 @@ namespace QuickLifeCoachingClinic.Controllers
             var doctor = await _mentorService.GetMentorByIdAsync(id);
             return Ok(doctor);
         }
+
+        [HttpGet("{id}/certificates/")]
+        public async Task<ActionResult> GetCertificates([FromRoute] int id)
+        {
+            var certificates = await _mentorService.GetCertificates(id);
+            return certificates != null ? Ok(certificates) : BadRequest();
+        }
     }
 }
