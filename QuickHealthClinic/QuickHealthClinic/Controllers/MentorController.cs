@@ -18,23 +18,23 @@ namespace QuickLifeCoachingClinic.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<MentorDto>>> GetAllMentorrsAsync()
         {
-            var doctors = await _mentorService.GetMentorsAsync();
-            return Ok(doctors);
+            var mentors = await _mentorService.GetMentorsAsync();
+            return Ok(mentors);
         }
 
         [HttpGet("search/{specialization}")]
         public async Task<ActionResult<IEnumerable<MentorDto>>> GetMentorsBySpecializationAsync(
         [FromRoute] string specialization)
         {
-            var doctors = await _mentorService.GetMentorsBySpecializationAsync(specialization);
-            return Ok(doctors);
+            var mentors = await _mentorService.GetMentorsBySpecializationAsync(specialization);
+            return Ok(mentors);
         }
 
         [HttpGet("{id}")]
         public async Task<ActionResult<MentorDto>> GetMentorByIdAsync([FromRoute] int id)
         {
-            var doctor = await _mentorService.GetMentorByIdAsync(id);
-            return Ok(doctor);
+            var mentor = await _mentorService.GetMentorByIdAsync(id);
+            return Ok(mentor);
         }
 
         [HttpGet("{id}/certificates/")]
