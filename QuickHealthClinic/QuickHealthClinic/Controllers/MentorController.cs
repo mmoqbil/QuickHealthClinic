@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using QuickLifeCoachingClinic.DTOs.DoctorDtoFolder;
+using QuickLifeCoachingClinic.DTOs.ImageDto;
 using QuickLifeCoachingClinic.Services.FileServices;
 using QuickLifeCoachingClinic.Services.MentorServices;
 
@@ -45,6 +46,14 @@ namespace QuickLifeCoachingClinic.Controllers
         {
             var certificates = await _mentorService.GetCertificates(id);
             return certificates != null ? Ok(certificates) : BadRequest();
+        }
+
+        [HttpPost("{id}/certificates")]
+        public async Task<ActionResult> UploadCertificate([FromRoute] int id, [FromForm] CreateImageDto file)
+        {
+            var filename = await _fileService.SaveFile(file);
+            var result = await _mentorService.AddCertificate(filename, id);
+            return result ? Ok(filename) : BadRequest();
         }
     }
 }

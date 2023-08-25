@@ -22,7 +22,7 @@ builder.Services.AddDbContext<QuickLifeCoachingClinicContext>(options =>
 });
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-
+    
 builder.Services.AddScoped<IMentorService, MentorService>();
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<IMentorRepository, MentorRepository>();
