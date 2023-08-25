@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using QuickLifeCoachingClinic.DTOs.DoctorDtoFolder;
+using QuickLifeCoachingClinic.Services.FileServices;
 using QuickLifeCoachingClinic.Services.MentorServices;
 
 namespace QuickLifeCoachingClinic.Controllers
@@ -10,9 +11,11 @@ namespace QuickLifeCoachingClinic.Controllers
     public class MentorController : ControllerBase
     {
         private readonly IMentorService _mentorService;
-        public MentorController(IMentorService mentorService)
+        private readonly IFileService _fileService;
+        public MentorController(IMentorService mentorService, IFileService fileService)
         {
             _mentorService = mentorService;
+            _fileService = fileService;
         }
 
         [HttpGet]
