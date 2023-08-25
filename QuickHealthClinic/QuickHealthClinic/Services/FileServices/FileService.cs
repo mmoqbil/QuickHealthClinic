@@ -11,9 +11,18 @@ namespace QuickLifeCoachingClinic.Services.FileServices
             _webHostEnvironment = webHostEnvironment;
         }
 
-        public Task<string> SaveFile(CreateImageDto file)
+        public async Task<string> SaveFile(CreateImageDto file)
         {
-            throw new NotImplementedException();
+            var wwwRootPath = _webHostEnvironment.WebRootPath;
+            var name = Guid.NewGuid();
+            var extension = Path.GetExtension(file.Image.FileName);
+            var filename = string.Concat(name, extension);
+            var path = Path.Combine(wwwRootPath, "Images", filename);
+
+            using var fileStream = new FileStream(path, FileMode.Create);
+            await file.Image.CopyToAsync(fileStream);
+
+            return filename;
         }
     }
 }
