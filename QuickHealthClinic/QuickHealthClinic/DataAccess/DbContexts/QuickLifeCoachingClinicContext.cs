@@ -11,6 +11,7 @@ namespace QuickLifeCoachingClinic.DataAccess.DbContexts
         {
         }
         public DbSet<Mentor> Mentors { get; set; }
+        public DbSet<Address> Addresses { get; set; }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
