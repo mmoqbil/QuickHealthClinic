@@ -1,9 +1,13 @@
-﻿using QuickLifeCoachingClinic.DTOs.ClinicDto;
+﻿using AutoMapper;
+using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
+using QuickLifeCoachingClinic.DTOs.ClinicDto;
 
 namespace QuickLifeCoachingClinic.Services.ClinicService
 {
     public class ClinicService : IClinicService
     {
+        private readonly IMapper _mapper;
+        private readonly IUnitOfWork _unitOfWork;
         public Task<IEnumerable<ClinicDto>> GetClinicAsync()
         {
             throw new NotImplementedException();
