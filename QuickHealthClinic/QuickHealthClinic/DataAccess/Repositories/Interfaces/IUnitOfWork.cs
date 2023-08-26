@@ -3,6 +3,7 @@
     public interface IUnitOfWork : IDisposable
     {
         IMentorRepository MentorRepository { get; }
+        IClinicRepository ClinicRepository { get; }
         Task SaveAsync();
     }
 }
