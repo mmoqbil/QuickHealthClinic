@@ -15,7 +15,12 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
         }
         public async Task<IEnumerable<ClinicDto>> GetClinicAsync()
         {
-            throw new NotImplementedException();
+            var clinics = await _unitOfWork.ClinicRepository
+                .GetAllAsync(includeProperties: "Address");
+
+            var clinicsDto = _mapper.Map<List<ClinicDto>>(clinics);
+
+            return clinicsDto;
         }
     }
 }
