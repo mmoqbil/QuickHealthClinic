@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using QuickLifeCoachingClinic.DataAccess.Entities;
 using QuickLifeCoachingClinic.DTOs.AccountDtoFolder;
+using QuickLifeCoachingClinic.DTOs.ClinicDto;
 using QuickLifeCoachingClinic.DTOs.DoctorDtoFolder;
 
 namespace QuickLifeCoachingClinic.Configurations.Mapper
@@ -20,6 +21,11 @@ namespace QuickLifeCoachingClinic.Configurations.Mapper
                         { City = dto.City, Street = dto.Street, PostalCode = dto.PostalCode })).ReverseMap();
 
             CreateMap<UpdateMentorDto, Mentor>();
+
+            CreateMap<Clinic, ClinicDto>()
+            .ForMember(dto => dto.City, c => c.MapFrom(a => a.Address.City))
+            .ForMember(dto => dto.Street, c => c.MapFrom(a => a.Address.Street))
+            .ForMember(dto => dto.PostalCode, c => c.MapFrom(a => a.Address.PostalCode));
         }
     }
 }
