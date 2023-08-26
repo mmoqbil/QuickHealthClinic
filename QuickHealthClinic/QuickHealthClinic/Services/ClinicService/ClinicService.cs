@@ -13,7 +13,7 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public Task<IEnumerable<ClinicDto>> GetClinicAsync()
+        public async Task<IEnumerable<ClinicDto>> GetClinicAsync()
         {
             throw new NotImplementedException();
         }
