@@ -14,11 +14,19 @@ namespace QuickLifeCoachingClinic.Controllers
         {
             _clinicService = clinicService;
         }
+
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ClinicDto>>> GetAllClinicsAsync()
         {
             var clinics = await _clinicService.GetClinicAsync();
             return Ok(clinics);
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<ClinicDto>> GetClinicByIdAsync([FromRoute] int id)
+        {
+            var clinic = await _clinicService.GetClinicByIdAsync(id);
+            return Ok(clinic);
         }
     }
 }
