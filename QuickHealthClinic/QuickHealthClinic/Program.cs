@@ -26,6 +26,7 @@ builder.Services.AddSwaggerGen();
     
 builder.Services.AddScoped<IMentorService, MentorService>();
 builder.Services.AddScoped<IClinicService, ClinicService>();
+builder.Services.AddScoped<IClinicRepository, ClinicRepository>();
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<IMentorRepository, MentorRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
