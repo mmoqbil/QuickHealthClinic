@@ -14,7 +14,7 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<IEnumerable<ClinicDto>> GetClinicAsync()
+        public async Task<IEnumerable<ClinicDto>> GetClinicsAsync()
         {
             var clinics = await _unitOfWork.ClinicRepository
                 .GetAllAsync(includeProperties: "Address");

@@ -4,7 +4,7 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
 {
     public interface IClinicService
     {
-        Task<IEnumerable<ClinicDto>> GetClinicAsync();
+        Task<IEnumerable<ClinicDto>> GetClinicsAsync();
         Task<ClinicDto> GetClinicByIdAsync(int id);
     }
 }

@@ -18,7 +18,7 @@ namespace QuickLifeCoachingClinic.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<ClinicDto>>> GetAllClinicsAsync()
         {
-            var clinics = await _clinicService.GetClinicAsync();
+            var clinics = await _clinicService.GetClinicsAsync();
             return Ok(clinics);
         }
 
