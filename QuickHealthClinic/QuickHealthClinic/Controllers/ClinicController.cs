@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuickLifeCoachingClinic.DTOs.ClinicDto;
+using QuickLifeCoachingClinic.Services.ClinicService;
 
 namespace QuickLifeCoachingClinic.Controllers
 {
@@ -12,9 +14,11 @@ namespace QuickLifeCoachingClinic.Controllers
         {
             _clinicService = clinicService;
         }
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<ClinicDto>>> GetAllClinicsAsync()
         {
-            return View();
+            var clinics = await _clinicService.GetClinicAsync();
+            return Ok(clinics);
         }
     }
 }
