@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using QuickLifeCoachingClinic.Configurations.Exceptions;
 using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
 using QuickLifeCoachingClinic.DTOs.ClinicDto;
 
@@ -21,6 +22,19 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
             var clinicsDto = _mapper.Map<List<ClinicDto>>(clinics);
 
             return clinicsDto;
+        }
+
+        public async Task<ClinicDto> GetClinicByIdAsync(int id)
+        {
+            var clinic = await _unitOfWork.ClinicRepository
+                .GetAsync(c => c.Id == id, "Address");
+
+            if (clinic is null)
+                throw new NotFoundApiException(nameof(ClinicDto), id.ToString());
+
+            var clinicDto = _mapper.Map<ClinicDto>(clinic);
+
+            return clinicDto;
         }
     }
 }
