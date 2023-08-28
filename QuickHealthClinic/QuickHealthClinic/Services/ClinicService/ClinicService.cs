@@ -15,7 +15,7 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
             _unitOfWork = unitOfWork;
             _mapper = mapper;
         }
-        public async Task<IEnumerable<ClinicDto>> GetClinicsAsync()
+        public async Task<IEnumerable<ClinicDto>> GetAsync()
         {
             var clinics = await _unitOfWork.ClinicRepository
                 .GetAllAsync(includeProperties: "Address");
@@ -25,7 +25,7 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
             return clinicsDto;
         }
 
-        public async Task<ClinicDto> GetClinicByIdAsync(int id)
+        public async Task<ClinicDto> GetByIdAsync(int id)
         {
             var clinic = await _unitOfWork.ClinicRepository
                 .GetAsync(c => c.Id == id, "Address");

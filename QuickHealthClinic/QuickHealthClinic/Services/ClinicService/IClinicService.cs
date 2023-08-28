@@ -4,9 +4,9 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
 {
     public interface IClinicService
     {
-        Task<IEnumerable<ClinicDto>> GetClinicsAsync();
-        Task<ClinicDto> GetClinicByIdAsync(int id);
-        Task<(int, CreateClinicDto)> CreateClinicAsync(CreateClinicDto dto);
+        Task<IEnumerable<ClinicDto>> GetAsync();
+        Task<ClinicDto> GetByIdAsync(int id);
+        Task<(int, CreateClinicDto)> CreateAsync(CreateClinicDto dto);
         Task UpdateAsync(int id, UpdateClinicDto dto);
     }
 }
