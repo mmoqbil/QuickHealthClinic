@@ -28,6 +28,8 @@ namespace QuickLifeCoachingClinic.Configurations.Mapper
             .ForMember(dto => dto.PostalCode, c => c.MapFrom(a => a.Address.PostalCode));
 
             CreateMap<CreateClinicDto, Clinic>();
+
+            CreateMap<UpdateClinicDto, Clinic>();
         }
     }
 }
