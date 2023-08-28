@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using QuickLifeCoachingClinic.Configurations.Exceptions;
+using QuickLifeCoachingClinic.DataAccess.Entities;
 using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
 using QuickLifeCoachingClinic.DTOs.ClinicDto;
 
@@ -35,6 +36,16 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
             var clinicDto = _mapper.Map<ClinicDto>(clinic);
 
             return clinicDto;
+        }
+
+        public async Task<(int, CreateClinicDto)> CreateAsync(CreateClinicDto dto)
+        {
+            var clinic = _mapper.Map<Clinic>(dto);
+
+            await _unitOfWork.ClinicRepository.AddAsync(clinic);
+            await _unitOfWork.SaveAsync();
+
+            return (clinic.Id, _mapper.Map<CreateClinicDto>(clinic));
         }
     }
 }
