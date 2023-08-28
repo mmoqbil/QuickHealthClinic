@@ -28,5 +28,12 @@ namespace QuickLifeCoachingClinic.Controllers
             var clinic = await _clinicService.GetClinicByIdAsync(id);
             return Ok(clinic);
         }
+
+        [HttpPost]
+        public async Task<IActionResult> AddClinicAsync([FromBody] CreateClinicDto dto)
+        {
+            var (clinicId, clinic) = await _clinicService.CreateClinicAsync(dto);
+            return Created($"/api/clinics/{clinicId}", clinic);
+        }
     }
 }
