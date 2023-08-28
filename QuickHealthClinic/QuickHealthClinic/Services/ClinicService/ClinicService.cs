@@ -47,5 +47,17 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
 
             return (clinic.Id, _mapper.Map<CreateClinicDto>(clinic));
         }
+
+        public async Task UpdateAsync(int id, UpdateClinicDto dto)
+        {
+            var clinic = await _unitOfWork.ClinicRepository
+                .GetAsync(id);
+
+            if (clinic is null)
+                throw new NotFoundApiException(nameof(ClinicDto), id.ToString());
+
+            _mapper.Map(dto, clinic);
+            await _unitOfWork.SaveAsync();
+        }
     }
 }
