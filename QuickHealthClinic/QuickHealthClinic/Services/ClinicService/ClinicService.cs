@@ -39,7 +39,12 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
         }
         public async Task<IEnumerable<ClinicMentorDto>> GetMentorsAsync(int id)
         {
-            throw new NotImplementedException();
+            var mentors = await _unitOfWork.ClinicRepository
+           .GetAllAsync(c => c.Id == id, includeProperties: "Mentors");
+
+            var mentorsDto = _mapper.Map<List<ClinicMentorDto>>(mentors);
+
+            return mentorsDto;
         }
 
         public async Task<(int, CreateClinicDto)> CreateAsync(CreateClinicDto dto)
