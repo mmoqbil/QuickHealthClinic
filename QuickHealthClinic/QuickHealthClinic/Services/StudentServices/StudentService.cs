@@ -19,7 +19,12 @@ namespace QuickLifeCoachingClinic.Services.StudentServices
         }
         public async Task<IEnumerable<StudentDto>> GetStudentsAsync()
         {
-            throw new NotImplementedException();
+            var studients = await _unitOfWork.StudentRepository
+            .GetAllAsync(includeProperties: "Address");
+
+            var studentsDto = _mapper.Map<List<StudentDto>>(studients);
+
+            return studentsDto;
         }
     }
 }
