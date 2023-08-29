@@ -37,6 +37,7 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
 
             return clinicDto;
         }
+
         public async Task<IEnumerable<ClinicMentorDto>> GetMentorsAsync(int id)
         {
             var mentors = await _unitOfWork.ClinicRepository
@@ -66,6 +67,17 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
                 throw new NotFoundApiException(nameof(ClinicDto), id.ToString());
 
             _mapper.Map(dto, clinic);
+            await _unitOfWork.SaveAsync();
+        }
+        public async Task DeleteAsync(int id)
+        {
+            var clinic = await _unitOfWork.ClinicRepository
+                .GetAsync(id);
+
+            if (clinic is null)
+                throw new NotFoundApiException(nameof(ClinicDto), id.ToString());
+
+            _unitOfWork.ClinicRepository.Remove(clinic);
             await _unitOfWork.SaveAsync();
         }
     }
