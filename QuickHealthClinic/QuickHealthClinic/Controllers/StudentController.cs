@@ -2,6 +2,8 @@
 
 namespace QuickLifeCoachingClinic.Controllers
 {
+    [ApiController]
+    [Route("/api/students")]
     public class StudentController : Controller
     {
         public IActionResult Index()
