@@ -1,6 +1,6 @@
 ﻿namespace QuickLifeCoachingClinic.DTOs.ClinicDto
 {
-    public class ClinicDoctorDto
+    public class ClinicMentorDto
     {
         public string Name { get; set; }
         public string Specialist { get; set; }
