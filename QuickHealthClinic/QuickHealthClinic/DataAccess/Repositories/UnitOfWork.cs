@@ -11,9 +11,11 @@ namespace QuickLifeCoachingClinic.DataAccess.Repositories
             _context = context;
             ClinicRepository = new ClinicRepository(_context);
             MentorRepository = new MentorRepository(_context);
+            StudentRepository = new StudentRepository(_context);
         }
         public IMentorRepository MentorRepository { get; }
         public IClinicRepository ClinicRepository { get; }
+        public IStudentRepository StudentRepository { get; }
 
         public void Dispose()
         {
