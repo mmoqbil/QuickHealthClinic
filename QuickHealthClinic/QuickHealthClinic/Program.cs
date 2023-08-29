@@ -10,6 +10,7 @@ using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
 using QuickLifeCoachingClinic.Services.MentorServices;
 using QuickLifeCoachingClinic.Services.FileServices;
 using QuickLifeCoachingClinic.Services.ClinicService;
+using QuickLifeCoachingClinic.Services.StudentServices;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,6 +26,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
     
 builder.Services.AddScoped<IMentorService, MentorService>();
+builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IClinicService, ClinicService>();
 builder.Services.AddScoped<IClinicRepository, ClinicRepository>();
 builder.Services.AddScoped<IFileService, FileService>();
