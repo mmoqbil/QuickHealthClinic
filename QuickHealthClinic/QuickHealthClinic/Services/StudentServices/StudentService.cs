@@ -10,6 +10,13 @@ namespace QuickLifeCoachingClinic.Services.StudentServices
         private readonly QuickLifeCoachingClinicContext _context;
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
+
+        public StudentService(QuickLifeCoachingClinicContext context, IMapper mapper, IUnitOfWork unitOfWork)
+        {
+            _context = context;
+            _mapper = mapper;
+            _unitOfWork = unitOfWork;
+        }
         public async Task<IEnumerable<StudentDto>> GetStudentsAsync()
         {
             throw new NotImplementedException();
