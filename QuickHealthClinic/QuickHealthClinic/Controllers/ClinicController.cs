@@ -29,6 +29,13 @@ namespace QuickLifeCoachingClinic.Controllers
             return Ok(clinic);
         }
 
+        [HttpGet("{id}/mentors")]
+        public async Task<ActionResult<IEnumerable<ClinicMentorDto>>> GetAllDoctorsAsync([FromRoute] int id)
+        {
+            var mentors = await _clinicService.GetMentorsAsync(id);
+            return Ok(mentors);
+        }
+
         [HttpPost]
         public async Task<IActionResult> AddClinicAsync([FromBody] CreateClinicDto dto)
         {
