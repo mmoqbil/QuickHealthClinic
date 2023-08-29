@@ -1,4 +1,4 @@
-﻿namespace QuickLifeCoachingClinic.DTOs.ClinicDto
+﻿namespace QuickLifeCoachingClinic.DTOs.ClinicDtoFolder
 {
     public class ClinicMentorDto
     {

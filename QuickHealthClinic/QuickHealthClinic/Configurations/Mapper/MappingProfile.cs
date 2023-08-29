@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using QuickLifeCoachingClinic.DataAccess.Entities;
 using QuickLifeCoachingClinic.DTOs.AccountDtoFolder;
-using QuickLifeCoachingClinic.DTOs.ClinicDto;
+using QuickLifeCoachingClinic.DTOs.ClinicDtoFolder;
 using QuickLifeCoachingClinic.DTOs.DoctorDtoFolder;
 
 namespace QuickLifeCoachingClinic.Configurations.Mapper

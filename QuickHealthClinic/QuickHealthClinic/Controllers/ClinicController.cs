@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using QuickLifeCoachingClinic.DTOs.ClinicDto;
+using QuickLifeCoachingClinic.DTOs.ClinicDtoFolder;
 using QuickLifeCoachingClinic.Services.ClinicService;
 
 namespace QuickLifeCoachingClinic.Controllers

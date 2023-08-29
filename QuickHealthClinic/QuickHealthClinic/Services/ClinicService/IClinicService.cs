@@ -1,4 +1,4 @@
-﻿using QuickLifeCoachingClinic.DTOs.ClinicDto;
+﻿using QuickLifeCoachingClinic.DTOs.ClinicDtoFolder;
 
 namespace QuickLifeCoachingClinic.Services.ClinicService
 {

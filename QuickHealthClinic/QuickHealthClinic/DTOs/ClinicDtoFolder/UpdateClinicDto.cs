@@ -1,6 +1,6 @@
-﻿namespace QuickLifeCoachingClinic.DTOs.ClinicDto
+﻿namespace QuickLifeCoachingClinic.DTOs.ClinicDtoFolder
 {
-    public class CreateClinicDto
+    public class UpdateClinicDto
     {
         public string Name { get; set; }
         public string Description { get; set; }

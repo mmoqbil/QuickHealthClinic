@@ -2,7 +2,7 @@
 using QuickLifeCoachingClinic.Configurations.Exceptions;
 using QuickLifeCoachingClinic.DataAccess.Entities;
 using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
-using QuickLifeCoachingClinic.DTOs.ClinicDto;
+using QuickLifeCoachingClinic.DTOs.ClinicDtoFolder;
 
 namespace QuickLifeCoachingClinic.Services.ClinicService
 {
