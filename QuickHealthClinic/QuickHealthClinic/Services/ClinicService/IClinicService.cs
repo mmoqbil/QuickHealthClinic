@@ -6,6 +6,7 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
     {
         Task<IEnumerable<ClinicDto>> GetAsync();
         Task<ClinicDto> GetByIdAsync(int id);
+        Task<IEnumerable<ClinicDoctorDto>> GetMentorsAsync(int id);
         Task<(int, CreateClinicDto)> CreateAsync(CreateClinicDto dto);
         Task UpdateAsync(int id, UpdateClinicDto dto);
     }
