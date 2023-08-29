@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuickLifeCoachingClinic.DTOs.StudentDtoFolder;
 using QuickLifeCoachingClinic.Services.StudentServices;
 
 namespace QuickLifeCoachingClinic.Controllers
@@ -12,9 +13,11 @@ namespace QuickLifeCoachingClinic.Controllers
         {
             _studentService = studentService;
         }
-        public IActionResult Index()
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<StudentDto>>> GetAllStudentsAsync()
         {
-            return View();
+            var students = await _studentService.GetStudentsAsync();
+            return Ok(students);
         }
     }
 }
