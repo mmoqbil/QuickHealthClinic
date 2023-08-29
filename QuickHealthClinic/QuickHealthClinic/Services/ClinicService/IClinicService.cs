@@ -9,5 +9,6 @@ namespace QuickLifeCoachingClinic.Services.ClinicService
         Task<IEnumerable<ClinicMentorDto>> GetMentorsAsync(int id);
         Task<(int, CreateClinicDto)> CreateAsync(CreateClinicDto dto);
         Task UpdateAsync(int id, UpdateClinicDto dto);
+        Task DeleteAsync(int id);
     }
 }
