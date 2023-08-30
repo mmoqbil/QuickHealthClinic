@@ -39,6 +39,11 @@ namespace QuickLifeCoachingClinic.Controllers
             return NoContent();
         }
 
-      
+        [HttpPost("student/register")]
+        public async Task<IActionResult> AddStudentAsync([FromBody] CreateStudentDto dto)
+        {
+            var (studentId, student) = await _studentService.CreateAsync(dto);
+            return Created($"/api/students/{studentId}", student);
+        }
     }
 }
