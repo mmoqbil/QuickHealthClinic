@@ -52,5 +52,12 @@ namespace QuickLifeCoachingClinic.Controllers
             await _studentService.UpdateAsync(id, dto);
             return NoContent();
         }
+
+        [HttpDelete("student/{id}")]
+        public async Task<IActionResult> DeleteStudentByIdAsync([FromRoute] int id)
+        {
+            await _studentService.DeleteAsync(id);
+            return NoContent();
+        }
     }
 }
