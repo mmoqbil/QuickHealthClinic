@@ -9,5 +9,6 @@ namespace QuickLifeCoachingClinic.Services.StudentServices
         Task<StudentDto> GetIdAsync(int id);
         Task<(int, CreateStudentDto)> CreateAsync(CreateStudentDto dto);
         Task UpdateAsync(int id, UpdateStudentDto dto);
+        Task DeleteAsync(int id);
     }
 }
