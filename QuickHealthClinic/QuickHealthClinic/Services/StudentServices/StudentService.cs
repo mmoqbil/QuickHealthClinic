@@ -1,6 +1,7 @@
 ﻿using AutoMapper;
 using QuickLifeCoachingClinic.Configurations.Exceptions;
 using QuickLifeCoachingClinic.DataAccess.DbContexts;
+using QuickLifeCoachingClinic.DataAccess.Entities;
 using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
 using QuickLifeCoachingClinic.DTOs.StudentDtoFolder;
 
@@ -40,6 +41,16 @@ namespace QuickLifeCoachingClinic.Services.StudentServices
             var studentDto = _mapper.Map<StudentDto>(student);
 
             return studentDto;
+        }
+
+        public async Task<(int, CreateStudentDto)> CreateAsync(CreateStudentDto dto)
+        {
+            var student = _mapper.Map<Student>(dto);
+
+            await _unitOfWork.StudentRepository.AddAsync(student);
+            await _unitOfWork.SaveAsync();
+
+            return (student.Id, _mapper.Map<CreateStudentDto>(student));
         }
     }
 }
