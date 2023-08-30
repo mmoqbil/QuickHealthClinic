@@ -45,5 +45,12 @@ namespace QuickLifeCoachingClinic.Controllers
             var (studentId, student) = await _studentService.CreateAsync(dto);
             return Created($"/api/students/{studentId}", student);
         }
+
+        [HttpPut("student/{id}")]
+        public async Task<IActionResult> UpdateStudentAsync([FromRoute] int id, [FromBody] UpdateStudentDto dto)
+        {
+            await _studentService.UpdateAsync(id, dto);
+            return NoContent();
+        }
     }
 }
