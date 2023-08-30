@@ -12,9 +12,10 @@ namespace QuickLifeCoachingClinic.Controllers
     {
         private readonly IMentorService _mentorService;
         private readonly IStudentService _studentService;
-        public AccountController(IMentorService mentorService)
+        public AccountController(IMentorService mentorService, IStudentService studentService)
         {
             _mentorService = mentorService;
+            _studentService = studentService;
         }
 
         [HttpPost("mentor/register")]
