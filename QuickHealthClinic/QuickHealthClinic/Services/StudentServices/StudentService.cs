@@ -65,5 +65,17 @@ namespace QuickLifeCoachingClinic.Services.StudentServices
             _mapper.Map(dto, student);
             await _unitOfWork.SaveAsync();
         }
+
+        public async Task DeleteAsync(int id)
+        {
+            var student = await _unitOfWork.StudentRepository
+                .GetAsync(id);
+
+            if (student is null)
+                throw new NotFoundApiException(nameof(StudentDto), id.ToString());
+
+            _unitOfWork.StudentRepository.Remove(student);
+            await _unitOfWork.SaveAsync();
+        }
     }
 }
