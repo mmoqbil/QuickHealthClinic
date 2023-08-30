@@ -19,7 +19,7 @@ namespace QuickLifeCoachingClinic.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<MentorDto>>> GetAllMentorrsAsync()
+        public async Task<ActionResult<IEnumerable<MentorDto>>> GetAllMentorsAsync()
         {
             var mentors = await _mentorService.GetMentorsAsync();
             return Ok(mentors);
