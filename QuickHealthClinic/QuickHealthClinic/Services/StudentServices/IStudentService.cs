@@ -6,5 +6,6 @@ namespace QuickLifeCoachingClinic.Services.StudentServices
     {
         Task<IEnumerable<StudentDto>> GetStudentsAsync();
         Task<StudentDto> GetIdAsync(int id);
+        Task<(int, CreateStudentDto)> CreateAsync(CreateStudentDto dto);
     }
 }
