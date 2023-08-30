@@ -2,7 +2,7 @@
 using QuickLifeCoachingClinic.DataAccess.Entities;
 using QuickLifeCoachingClinic.DTOs.AccountDtoFolder;
 using QuickLifeCoachingClinic.DTOs.ClinicDtoFolder;
-using QuickLifeCoachingClinic.DTOs.DoctorDtoFolder;
+using QuickLifeCoachingClinic.DTOs.MentorDtoFolder;
 
 namespace QuickLifeCoachingClinic.Configurations.Mapper
 {

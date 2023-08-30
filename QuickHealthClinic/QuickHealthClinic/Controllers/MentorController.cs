@@ -1,5 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using QuickLifeCoachingClinic.DTOs.DoctorDtoFolder;
+using QuickLifeCoachingClinic.DTOs.MentorDtoFolder;
 using QuickLifeCoachingClinic.DTOs.ImageDto;
 using QuickLifeCoachingClinic.Services.FileServices;
 using QuickLifeCoachingClinic.Services.MentorServices;

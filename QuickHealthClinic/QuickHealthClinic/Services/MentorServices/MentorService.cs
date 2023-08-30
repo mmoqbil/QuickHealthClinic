@@ -1,7 +1,7 @@
 ﻿using AutoMapper;
 using QuickLifeCoachingClinic.DataAccess.DbContexts;
 using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
-using QuickLifeCoachingClinic.DTOs.DoctorDtoFolder;
+using QuickLifeCoachingClinic.DTOs.MentorDtoFolder;
 using QuickLifeCoachingClinic.Configurations.Exceptions;
 using Microsoft.AspNetCore.Identity;
 using QuickLifeCoachingClinic.DataAccess.Entities;

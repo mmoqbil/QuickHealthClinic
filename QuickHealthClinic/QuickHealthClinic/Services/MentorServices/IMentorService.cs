@@ -1,5 +1,5 @@
 ﻿using QuickLifeCoachingClinic.DTOs.AccountDtoFolder;
-using QuickLifeCoachingClinic.DTOs.DoctorDtoFolder;
+using QuickLifeCoachingClinic.DTOs.MentorDtoFolder;
 
 namespace QuickLifeCoachingClinic.Services.MentorServices
 {
