@@ -1,6 +1,8 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using QuickLifeCoachingClinic.DTOs.AccountDtoFolder;
+using QuickLifeCoachingClinic.DTOs.StudentDtoFolder;
 using QuickLifeCoachingClinic.Services.MentorServices;
+using QuickLifeCoachingClinic.Services.StudentServices;
 
 namespace QuickLifeCoachingClinic.Controllers
 {
@@ -9,6 +11,7 @@ namespace QuickLifeCoachingClinic.Controllers
     public class AccountController : Controller
     {
         private readonly IMentorService _mentorService;
+        private readonly IStudentService _studentService;
         public AccountController(IMentorService mentorService)
         {
             _mentorService = mentorService;
@@ -34,5 +37,7 @@ namespace QuickLifeCoachingClinic.Controllers
             await _mentorService.DeleteMentorAsync(id);
             return NoContent();
         }
+
+      
     }
 }
