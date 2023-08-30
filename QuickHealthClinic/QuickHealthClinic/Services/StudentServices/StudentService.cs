@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using QuickLifeCoachingClinic.Configurations.Exceptions;
 using QuickLifeCoachingClinic.DataAccess.DbContexts;
 using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
 using QuickLifeCoachingClinic.DTOs.StudentDtoFolder;
@@ -17,6 +18,7 @@ namespace QuickLifeCoachingClinic.Services.StudentServices
             _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
+
         public async Task<IEnumerable<StudentDto>> GetStudentsAsync()
         {
             var studients = await _unitOfWork.StudentRepository
@@ -25,6 +27,19 @@ namespace QuickLifeCoachingClinic.Services.StudentServices
             var studentsDto = _mapper.Map<List<StudentDto>>(studients);
 
             return studentsDto;
+        }
+
+        public async Task<StudentDto> GetIdAsync(int id)
+        {
+            var student = await _unitOfWork.StudentRepository
+                .GetAsync(p => p.Id == id, "Address");
+
+            if (student is null)
+                throw new NotFoundApiException(nameof(StudentDto), id.ToString());
+
+            var studentDto = _mapper.Map<StudentDto>(student);
+
+            return studentDto;
         }
     }
 }
