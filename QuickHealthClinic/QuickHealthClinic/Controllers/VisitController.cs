@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuickLifeCoachingClinic.DTOs.VisitDtoFolder;
 using QuickLifeCoachingClinic.Services.VisitServices;
 
 namespace QuickLifeCoachingClinic.Controllers
@@ -12,6 +13,14 @@ namespace QuickLifeCoachingClinic.Controllers
         public VisitController(IVisitService visitsService)
         {
             _visitsService = visitsService;
+        }
+
+        [HttpGet("calendar/{mentorId}")]
+        public async Task<IEnumerable<VisitCalendarDto>> GetVisitsForMonth([FromRoute] int mentorId, [FromQuery] int year,
+            int month)
+        {
+            var visits = await _visitsService.GetVisitsForMonth(mentorId, new DateOnly(year, month, 1));
+            return visits;
         }
     }
 }
