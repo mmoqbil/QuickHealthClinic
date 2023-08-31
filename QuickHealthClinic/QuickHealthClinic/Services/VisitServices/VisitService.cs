@@ -1,6 +1,10 @@
-﻿namespace QuickLifeCoachingClinic.Services.VisitServices
+﻿using AutoMapper;
+using QuickLifeCoachingClinic.DTOs.VisitDtoFolder;
+
+namespace QuickLifeCoachingClinic.Services.VisitServices
 {
-    public class VisitService
+    public class VisitService : IVisitService
     {
+        private readonly IMapper _mapper;
     }
 }
