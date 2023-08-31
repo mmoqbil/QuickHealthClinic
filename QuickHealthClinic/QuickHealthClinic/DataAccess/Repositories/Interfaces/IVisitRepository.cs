@@ -6,5 +6,6 @@ namespace QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces
     public interface IVisitRepository : IRepository<Visit>
     {
         Task<IReadOnlyList<VisitCalendarDto>> GetVisitsForMonth(int mentorId, DateOnly date);
+        Task<Visit?> GetMentorVisitForDate(int mentorId, DateTime startDate, DateTime endDate);
     }
 }
