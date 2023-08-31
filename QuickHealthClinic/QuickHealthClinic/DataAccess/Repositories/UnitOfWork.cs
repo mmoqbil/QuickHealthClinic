@@ -16,6 +16,7 @@ namespace QuickLifeCoachingClinic.DataAccess.Repositories
         public IMentorRepository MentorRepository { get; }
         public IClinicRepository ClinicRepository { get; }
         public IStudentRepository StudentRepository { get; }
+        public IVisitRepository VisitRepository { get; }
 
         public void Dispose()
         {
