@@ -8,5 +8,11 @@ namespace QuickLifeCoachingClinic.Services.VisitServices
     {
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
+
+        public VisitService(IMapper mapper, IUnitOfWork unitOfWork)
+        {
+            _mapper = mapper;
+            _unitOfWork = unitOfWork;
+        }
     }
 }
