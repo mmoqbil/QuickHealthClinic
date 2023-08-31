@@ -9,9 +9,9 @@ namespace QuickLifeCoachingClinic.Controllers
     {
         private readonly IVisitService _visitsService;
 
-        public IActionResult Index()
+        public VisitController(IVisitService visitsService)
         {
-            return View();
+            _visitsService = visitsService;
         }
     }
 }
