@@ -13,6 +13,15 @@ namespace QuickLifeCoachingClinic.DataAccess.Repositories
             DbSet = context.Visits;
         }
 
+        public async Task<Visit?> GetMentorVisitForDate(int mentorId, DateTime startDate, DateTime endDate)
+        {
+            var visit = await DbSet
+                .Where(visit => visit.MentorId == mentorId)
+                .SingleOrDefaultAsync(visit =>
+                    visit.VisitDate < endDate && startDate < visit.VisitDate.AddMinutes(visit.Duration));
+            return visit;
+        }
+
         public async Task<IReadOnlyList<VisitCalendarDto>> GetVisitsForMonth(int mentorId, DateOnly date)
         {
             var visitDates = await DbSet
