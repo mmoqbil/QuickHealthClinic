@@ -6,6 +6,9 @@ namespace QuickLifeCoachingClinic.DataAccess.Repositories
 {
     public class VisitRepository : Repository<Visit>, IVisitRepository
     {
-       
+        public VisitRepository(QuickLifeCoachingClinicContext context) : base(context)
+        {
+            DbSet = context.Visits;
+        }
     }
 }
