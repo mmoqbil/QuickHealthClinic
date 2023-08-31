@@ -14,5 +14,10 @@ namespace QuickLifeCoachingClinic.Services.VisitServices
             _mapper = mapper;
             _unitOfWork = unitOfWork;
         }
+
+        public async Task<IEnumerable<VisitCalendarDto>> GetVisitsForMonth(int mentorId, DateOnly date)
+        {
+            return await _unitOfWork.VisitRepository.GetVisitsForMonth(mentorId, date);
+        }
     }
 }
