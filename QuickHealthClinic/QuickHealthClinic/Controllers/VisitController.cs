@@ -1,11 +1,14 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuickLifeCoachingClinic.Services.VisitServices;
 
 namespace QuickLifeCoachingClinic.Controllers
 {
     [ApiController]
     [Route("/api/visits")]
-    public class VisitController : Controller
+    public class VisitController : ControllerBase
     {
+        private readonly IVisitService _visitsService;
+
         public IActionResult Index()
         {
             return View();
