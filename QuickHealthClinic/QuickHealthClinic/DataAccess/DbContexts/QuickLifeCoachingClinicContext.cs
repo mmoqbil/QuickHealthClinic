@@ -15,6 +15,7 @@ namespace QuickLifeCoachingClinic.DataAccess.DbContexts
         public DbSet<Clinic> Clinics { get; set; }
         public DbSet<Person> Persons { get; set; }
         public DbSet<Student> Students { get; set; }
+        public DbSet<Visit> Visits { get; set; }
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.LogTo(message => Debug.WriteLine(message));
