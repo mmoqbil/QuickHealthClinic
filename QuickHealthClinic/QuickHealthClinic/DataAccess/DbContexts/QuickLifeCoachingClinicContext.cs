@@ -10,16 +10,19 @@ namespace QuickLifeCoachingClinic.DataAccess.DbContexts
         public QuickLifeCoachingClinicContext(DbContextOptions<QuickLifeCoachingClinicContext> options) : base(options)
         {
         }
+
         public DbSet<Mentor> Mentors { get; set; }
         public DbSet<Address> Addresses { get; set; }
         public DbSet<Clinic> Clinics { get; set; }
         public DbSet<Person> Persons { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Visit> Visits { get; set; }
+
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.LogTo(message => Debug.WriteLine(message));
         }
+
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             modelBuilder.ApplyConfigurationsFromAssembly(GetType().Assembly);
