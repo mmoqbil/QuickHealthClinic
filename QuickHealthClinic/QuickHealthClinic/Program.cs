@@ -31,6 +31,7 @@ builder.Services.AddScoped<IStudentService, StudentService>();
 builder.Services.AddScoped<IClinicService, ClinicService>();
 builder.Services.AddScoped<IClinicRepository, ClinicRepository>();
 builder.Services.AddScoped<IVisitService, VisitService>();
+builder.Services.AddScoped<IVisitRepository, VisitRepository>();
 builder.Services.AddScoped<IFileService, FileService>();
 builder.Services.AddScoped<IMentorRepository, MentorRepository>();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
