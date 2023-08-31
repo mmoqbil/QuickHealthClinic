@@ -5,6 +5,7 @@
         IMentorRepository MentorRepository { get; }
         IStudentRepository StudentRepository { get; }
         IClinicRepository ClinicRepository { get; }
+        IVisitRepository VisitRepository { get; }
         Task SaveAsync();
     }
 }
