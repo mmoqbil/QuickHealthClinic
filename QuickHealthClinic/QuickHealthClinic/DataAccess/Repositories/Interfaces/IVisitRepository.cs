@@ -1,6 +1,8 @@
-﻿namespace QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces
+﻿using QuickLifeCoachingClinic.DataAccess.Entities;
+
+namespace QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces
 {
-    public interface IVisitRepository
+    public interface IVisitRepository : IRepository<Visit>
     {
     }
 }
