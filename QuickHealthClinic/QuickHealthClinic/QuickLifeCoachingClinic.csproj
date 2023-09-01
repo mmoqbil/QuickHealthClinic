@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <Folder Include="Configurations\Extensions\" />
-    <Folder Include="DataAccess\Entities\Configurations\" />
   </ItemGroup>
 
 </Project>
