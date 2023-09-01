@@ -12,7 +12,6 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities
         public string PhoneNumber { get; set; } = string.Empty;
         public string Email { get; set; } = string.Empty;
         public int AddressId { get; set; }
-        [ForeignKey("AddressId")]
         public virtual Address Address { get; set; }
         public DateTime Created { get; }
         public string AvatarUri { get; set; } = string.Empty;
