@@ -1,4 +1,6 @@
-﻿namespace QuickLifeCoachingClinic.DataAccess.Entities
+﻿using System.ComponentModel.DataAnnotations.Schema;
+
+namespace QuickLifeCoachingClinic.DataAccess.Entities
 {
     public class Visit
     {
