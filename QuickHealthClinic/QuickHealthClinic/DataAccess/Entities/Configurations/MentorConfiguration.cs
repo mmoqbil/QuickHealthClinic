@@ -7,6 +7,7 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
     {
         public void Configure(EntityTypeBuilder<Mentor> builder)
         {
+         
         }
     }
 }
