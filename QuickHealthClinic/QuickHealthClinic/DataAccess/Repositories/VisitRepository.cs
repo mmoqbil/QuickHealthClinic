@@ -41,5 +41,14 @@ namespace QuickLifeCoachingClinic.DataAccess.Repositories
 
             return visitCalendarDto;
         }
+
+        public async Task<Visit?> GetStudentVisitForDate(int studentId, DateTime startDate, DateTime endDate)
+        {
+            var visit = await DbSet
+                .Where(visit => visit.StudentId == studentId)
+                .SingleOrDefaultAsync(visit =>
+                    visit.VisitDate < endDate && startDate < visit.VisitDate.AddMinutes(visit.Duration));
+            return visit;
+        }
     }
 }
