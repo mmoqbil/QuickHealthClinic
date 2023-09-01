@@ -8,5 +8,6 @@
         public int AddressId { get; set; }
         public virtual Address Address { get; set; }
         public virtual List<Mentor> Mentors { get; set; } = new();
+        public virtual List<Student> Students { get; set; } = new();
     }
 }
