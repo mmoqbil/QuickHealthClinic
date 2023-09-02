@@ -19,6 +19,19 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
                     .OnDelete(DeleteBehavior.ClientCascade),
                 cp => { cp.HasKey(x => new { x.StudentId, x.ClinicId }); }
             );
+
+            builder.HasMany(c => c.Mentors)
+           .WithMany(d => d.Clinics)
+           .UsingEntity<ClinicMentor>(
+               cd => cd.HasOne(d => d.Mentor)
+                   .WithMany()
+                   .HasForeignKey(cd => cd.MentorId),
+               cd => cd.HasOne(c => c.Clinic)
+                   .WithMany()
+                   .HasForeignKey(cd => cd.ClinicId)
+                   .OnDelete(DeleteBehavior.ClientCascade),
+               cd => { cd.HasKey(x => new { x.MentorId, x.ClinicId }); }
+           );
         }
     }
 }
