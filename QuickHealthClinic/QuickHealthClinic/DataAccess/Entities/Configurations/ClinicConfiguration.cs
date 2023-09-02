@@ -32,6 +32,10 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
                    .OnDelete(DeleteBehavior.ClientCascade),
                cd => { cd.HasKey(x => new { x.MentorId, x.ClinicId }); }
            );
+
+            builder.Property(c => c.Name)
+            .IsRequired()
+            .HasMaxLength(50);
         }
     }
 }
