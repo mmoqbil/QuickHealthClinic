@@ -25,6 +25,9 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
 
             builder.Property(p => p.Created)
             .HasDefaultValueSql("getdate()");
+
+            builder.Property(p => p.Pesel)
+            .HasColumnType("varchar(11)");
         }
     }
 }
