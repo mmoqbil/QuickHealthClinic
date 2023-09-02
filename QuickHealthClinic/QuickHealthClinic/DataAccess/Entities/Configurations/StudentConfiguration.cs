@@ -7,7 +7,9 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
     {
         public void Configure(EntityTypeBuilder<Student> builder)
         {
-            throw new NotImplementedException();
+            builder.Property(p => p.FirstName)
+            .IsRequired()
+            .HasMaxLength(30);
         }
     }
 }
