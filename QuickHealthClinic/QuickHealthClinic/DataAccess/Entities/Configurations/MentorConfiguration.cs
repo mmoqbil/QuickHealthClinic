@@ -31,6 +31,10 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
             builder.Property(d => d.PhoneNumber)
             .IsRequired()
             .HasColumnType("varchar(9)");
+
+            builder.Property(d => d.Email)
+            .IsRequired()
+            .HasMaxLength(50);
         }
     }
 }
