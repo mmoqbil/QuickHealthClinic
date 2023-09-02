@@ -28,6 +28,9 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
 
             builder.Property(p => p.Pesel)
             .HasColumnType("varchar(11)");
+
+            builder.Property(p => p.PasswordHash)
+            .IsRequired();
         }
     }
 }
