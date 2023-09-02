@@ -23,6 +23,10 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
             builder.Property(d => d.FirstName)
             .IsRequired()
             .HasMaxLength(30);
+
+            builder.Property(d => d.LastName)
+            .IsRequired()
+            .HasMaxLength(50);
         }
     }
 }
