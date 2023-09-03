@@ -7,7 +7,8 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
     {
         public void Configure(EntityTypeBuilder<Certificate> builder)
         {
-            throw new NotImplementedException();
+            builder.HasOne(c => c.Mentor)
+            .WithMany();
         }
     }
 }
