@@ -22,6 +22,10 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
             builder.Property(a => a.City)
             .IsRequired()
             .HasMaxLength(30);
+
+            builder.Property(a => a.Street)
+            .IsRequired()
+            .HasMaxLength(50);
         }
     }
 }
