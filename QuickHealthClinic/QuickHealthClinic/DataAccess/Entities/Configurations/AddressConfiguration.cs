@@ -10,6 +10,10 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
             builder.HasOne(c => c.Clinic)
             .WithOne(a => a.Address)
             .HasForeignKey<Clinic>(c => c.AddressId);
+
+            builder.HasOne(d => d.Mentor)
+            .WithOne(a => a.Address)
+            .HasForeignKey<Mentor>(p => p.AddressId);
         }
     }
 }
