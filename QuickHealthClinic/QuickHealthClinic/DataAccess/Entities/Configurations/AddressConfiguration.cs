@@ -1,6 +1,13 @@
-﻿namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
+
+namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
 {
-    public class AddressConfiguration
+    public class AddressConfiguration : IEntityTypeConfiguration<Address>
     {
+        public void Configure(EntityTypeBuilder<Address> builder)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
