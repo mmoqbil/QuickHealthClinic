@@ -7,6 +7,9 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
     {
         public void Configure(EntityTypeBuilder<Address> builder)
         {
+            builder.HasOne(c => c.Clinic)
+            .WithOne(a => a.Address)
+            .HasForeignKey<Clinic>(c => c.AddressId);
         }
     }
 }
