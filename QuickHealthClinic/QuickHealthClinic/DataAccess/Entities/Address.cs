@@ -7,7 +7,7 @@
         public string Street { get; set; }
         public string PostalCode { get; set; }
         public virtual Mentor Mentor { get; set; }
-
         public virtual Clinic Clinic { get; set; }
+        public virtual Student Student { get; set; }
     }
 }
