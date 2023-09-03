@@ -7,7 +7,6 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
     {
         public void Configure(EntityTypeBuilder<Address> builder)
         {
-            throw new NotImplementedException();
         }
     }
 }
