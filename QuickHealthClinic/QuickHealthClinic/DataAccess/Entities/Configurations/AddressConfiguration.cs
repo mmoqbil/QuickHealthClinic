@@ -18,6 +18,10 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
             builder.HasOne(p => p.Student)
             .WithOne(a => a.Address)
             .HasForeignKey<Student>(p => p.AddressId);
+
+            builder.Property(a => a.City)
+            .IsRequired()
+            .HasMaxLength(30);
         }
     }
 }
