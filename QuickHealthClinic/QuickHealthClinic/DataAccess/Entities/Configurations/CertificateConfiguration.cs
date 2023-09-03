@@ -9,6 +9,10 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
         {
             builder.HasOne(c => c.Mentor)
             .WithMany();
+
+            builder.Property(c => c.Filename)
+            .IsRequired()
+            .HasMaxLength(100);
         }
     }
 }
