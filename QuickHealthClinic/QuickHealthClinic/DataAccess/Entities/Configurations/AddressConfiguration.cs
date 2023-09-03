@@ -26,6 +26,10 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
             builder.Property(a => a.Street)
             .IsRequired()
             .HasMaxLength(50);
+
+            builder.Property(a => a.PostalCode)
+            .IsRequired()
+            .HasColumnType("varchar(6)");
         }
     }
 }
