@@ -13,6 +13,7 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities
         public string Email { get; set; } = string.Empty;
         public int AddressId { get; set; }
         public virtual Address Address { get; set; }
+        public virtual List<Visit> Visits { get; set; } = new();
         public DateTime Created { get; }
         public string AvatarUri { get; set; } = string.Empty;
         public string PasswordHash { get; set; }
