@@ -7,7 +7,9 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
     {
         public void Configure(EntityTypeBuilder<Visit> builder)
         {
-            throw new NotImplementedException();
+            builder.HasOne(v => v.Student)
+            .WithMany(p => p.Visits)
+            .HasForeignKey(v => v.StudentId);
         }
     }
 }
