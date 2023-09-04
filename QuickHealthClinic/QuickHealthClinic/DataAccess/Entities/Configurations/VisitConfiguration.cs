@@ -10,6 +10,11 @@ namespace QuickLifeCoachingClinic.DataAccess.Entities.Configurations
             builder.HasOne(v => v.Student)
             .WithMany(p => p.Visits)
             .HasForeignKey(v => v.StudentId);
+
+            builder.HasOne(v => v.Mentor)
+            .WithMany(d => d.Visits)
+            .HasForeignKey(v => v.MentorId)
+            .OnDelete(DeleteBehavior.ClientCascade);
         }
     }
 }
