@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace QuickLifeCoachingClinic.DataAccess.Entities
 {
-    public abstract class Person : IdentityUser
+    public abstract class Person 
     {
         public int Id { get; set; }
         public string FirstName { get; set; } = string.Empty;
