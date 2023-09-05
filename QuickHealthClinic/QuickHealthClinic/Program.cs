@@ -37,10 +37,7 @@ builder.Services.AddScoped<IMentorRepository, MentorRepository>();
 builder.Services.AddScoped<IStudentRepository, StudentRepository>();
 builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 builder.Services.AddScoped<IAuthorizationHandler, MentorResourceOperationRequirementHandler>();
-builder.Services
-        .AddIdentity<Mentor, IdentityRole>()
-        .AddDefaultTokenProviders()
-        .AddEntityFrameworkStores<QuickLifeCoachingClinicContext>();
+
 
 
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
