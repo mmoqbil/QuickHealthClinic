@@ -14,13 +14,11 @@ namespace QuickLifeCoachingClinic.Services.MentorServices
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
         private readonly QuickLifeCoachingClinicContext _context;
-        private readonly IPasswordHasher<Mentor> _passwordHasher;
-        public MentorService(IUnitOfWork unitOfWork, IMapper mapper, QuickLifeCoachingClinicContext context, IPasswordHasher<Mentor> passwordHasher)
+        public MentorService(IUnitOfWork unitOfWork, IMapper mapper, QuickLifeCoachingClinicContext context)
         {
             _unitOfWork = unitOfWork;
             _mapper = mapper;
             _context = context;
-            _passwordHasher = passwordHasher;
         }
 
         public async Task<IEnumerable<MentorDto>> GetMentorsAsync()
@@ -58,8 +56,6 @@ namespace QuickLifeCoachingClinic.Services.MentorServices
         public async Task<(int, CreateMentorDto)> CreateMentorAsync(CreateMentorDto dto)
         {
             var mentor = _mapper.Map<Mentor>(dto);
-            var hashedPassword = _passwordHasher.HashPassword(mentor, dto.PasswordHash);
-            mentor.PasswordHash = hashedPassword;
 
             await _unitOfWork.MentorRepository.AddAsync(mentor);
             await _unitOfWork.SaveAsync();
