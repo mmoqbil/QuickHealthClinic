@@ -8,6 +8,7 @@ namespace QuickLifeCoachingClinic.Services.VisitServices
         Task<bool> AcceptVisit(int visitId);
         Task<bool> DeclineVisit(int visitId);
         Task<IEnumerable<VisitCalendarDto>> GetVisitsForMonth(int mentorId, DateOnly date);
+        Task<IEnumerable<VisitDTO>> GetVisitsByMentorIdAsync(int id);
 
     }
 }
