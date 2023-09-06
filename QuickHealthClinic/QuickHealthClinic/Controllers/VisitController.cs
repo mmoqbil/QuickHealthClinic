@@ -23,6 +23,13 @@ namespace QuickLifeCoachingClinic.Controllers
             return visits;
         }
 
+        [HttpGet("{mentorId}")]
+        public async Task<IEnumerable<VisitDTO>> GetAllVisitsForMentor([FromRoute] int mentorId)
+        {
+            var visits = _visitsService.GetVisitsByMentorIdAsync(mentorId);
+            return await visits;
+        }
+
         [HttpPost("{visitId}/accept")]
         public async Task<bool> AcceptVisit(int visitId)
         {
