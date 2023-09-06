@@ -28,5 +28,11 @@ namespace QuickLifeCoachingClinic.Controllers
         {
             return await _visitsService.AcceptVisit(visitId);
         }
+
+        [HttpPost("{visitId}/decline")]
+        public async Task<bool> DeclineVisit(int visitId)
+        {
+            return await _visitsService.DeclineVisit(visitId);
+        }
     }
 }
