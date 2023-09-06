@@ -15,6 +15,15 @@ namespace QuickLifeCoachingClinic.Services.VisitServices
             _unitOfWork = unitOfWork;
         }
 
+        public async Task<bool> AcceptVisit(int visitId)
+        {
+            var visit = await _unitOfWork.VisitRepository.GetAsync(visitId);
+            if (visit == null) return false;
+
+            visit.Confirmed = true;
+            await _unitOfWork.SaveAsync();
+            return true;
+        }
         public async Task<IEnumerable<VisitCalendarDto>> GetVisitsForMonth(int mentorId, DateOnly date)
         {
             return await _unitOfWork.VisitRepository.GetVisitsForMonth(mentorId, date);
