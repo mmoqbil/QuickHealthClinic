@@ -22,5 +22,11 @@ namespace QuickLifeCoachingClinic.Controllers
             var visits = await _visitsService.GetVisitsForMonth(mentorId, new DateOnly(year, month, 1));
             return visits;
         }
+
+        [HttpPost("{visitId}/accept")]
+        public async Task<bool> AcceptVisit(int visitId)
+        {
+            return await _visitsService.AcceptVisit(visitId);
+        }
     }
 }
