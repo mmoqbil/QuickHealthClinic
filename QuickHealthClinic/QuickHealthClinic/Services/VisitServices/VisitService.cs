@@ -59,5 +59,26 @@ namespace QuickLifeCoachingClinic.Services.VisitServices
             });
             return visitsDTO;
         }
+
+        public async Task<IEnumerable<VisitStudentDto>> GetVisitsByStudentIdAsync(int id)
+        {
+            var visits = await _unitOfWork.VisitRepository.GetAllAsync(
+                v => v.StudentId.Equals(id),
+                visits => visits.OrderBy(v => v.VisitDate),
+                "Doctor");
+
+            var visitsDTO = visits.Select(v => new VisitStudentDto
+            {
+                Id = v.Id,
+                Duration = v.Duration,
+                MentorId = v.MentorId,
+                Mentor = $"{v.Mentor.FirstName} {v.Mentor.LastName}",
+                Treatment = v.Name,
+                StartDate = new DateTimeOffset(v.VisitDate).ToUnixTimeSeconds()
+            }
+            );
+
+            return visitsDTO;
+        }
     }
 }
