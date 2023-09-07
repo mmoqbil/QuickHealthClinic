@@ -1,6 +1,6 @@
 ﻿namespace QuickLifeCoachingClinic.DTOs.VisitDtoFolder
 {
-    public class VisitUserDto
+    public class VisitStudentDto
     {
         public int Id { get; set; }
         public long StartDate { get; set; }
