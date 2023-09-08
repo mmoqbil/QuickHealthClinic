@@ -1,4 +1,5 @@
 ﻿using AutoMapper;
+using QuickLifeCoachingClinic.DataAccess.Entities;
 using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
 using QuickLifeCoachingClinic.DTOs.VisitDtoFolder;
 
@@ -81,6 +82,34 @@ namespace QuickLifeCoachingClinic.Services.VisitServices
             return visitsDTO;
         }
 
+        public async Task<(int, CreateVisitDto)> CreateAsync(CreateVisitDto visitDto)
+        {
+            var visit = new Visit
+            {
+                Name = visitDto.Name,
+                MentorId = visitDto.MentorId,
+                StudentId = visitDto.StudentId,
+                VisitDate = visitDto.VisitDate,
+                Duration = visitDto.Duration,
+                Confirmed = false
+            };
 
+            await _unitOfWork.VisitRepository.AddAsync(visit);
+            await _unitOfWork.SaveAsync();
+
+            var createdVisitDto = new CreateVisitDto
+            {
+                Name = visit.Name,
+                MentorId = visit.MentorId,
+                StudentId = visit.StudentId,
+                VisitDate = visit.VisitDate,
+                Duration = visit.Duration
+            };
+
+
+            await _unitOfWork.VisitRepository.AddAsync(visit);
+            await _unitOfWork.SaveAsync();
+            return (visit.Id, createdVisitDto);
+        }
     }
 }
