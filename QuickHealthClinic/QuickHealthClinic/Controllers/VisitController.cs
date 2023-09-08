@@ -52,7 +52,7 @@ namespace QuickLifeCoachingClinic.Controllers
         [HttpPost]
         public async Task<IActionResult> AddVisit([FromBody] CreateVisitDto visitDto)
         {
-            var (visitId, visit) = await _visitsService.CreateAsync(visitDto);
+            var (visitId, visit) = await _visitsService.CreateVisitAsync(visitDto);
             return Created($"/api/visits/{visit.MentorId}", visit);
         }
     }

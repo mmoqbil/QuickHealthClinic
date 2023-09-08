@@ -82,7 +82,7 @@ namespace QuickLifeCoachingClinic.Services.VisitServices
             return visitsDTO;
         }
 
-        public async Task<(int, CreateVisitDto)> CreateAsync(CreateVisitDto visitDto)
+        public async Task<(int, CreateVisitDto)> CreateVisitAsync(CreateVisitDto visitDto)
         {
             var visit = new Visit
             {
