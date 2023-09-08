@@ -111,5 +111,7 @@ namespace QuickLifeCoachingClinic.Services.VisitServices
             await _unitOfWork.SaveAsync();
             return (visit.Id, createdVisitDto);
         }
+
+
     }
 }
