@@ -80,5 +80,7 @@ namespace QuickLifeCoachingClinic.Services.VisitServices
 
             return visitsDTO;
         }
+
+
     }
 }
