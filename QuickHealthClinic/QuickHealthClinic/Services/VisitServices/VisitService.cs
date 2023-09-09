@@ -122,6 +122,7 @@ namespace QuickLifeCoachingClinic.Services.VisitServices
             if (dbVisit == null) return null;
 
             dbVisit = _mapper.Map(visitDto, dbVisit);
+            _unitOfWork.VisitRepository.SetModified(dbVisit);
 
             await _unitOfWork.SaveAsync();
             return dbVisit;
