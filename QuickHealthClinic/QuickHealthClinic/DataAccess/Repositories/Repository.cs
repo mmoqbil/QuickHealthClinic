@@ -69,5 +69,10 @@ namespace QuickLifeCoachingClinic.DataAccess.Repositories
         {
             DbSet.Remove(entity);
         }
+
+        public void SetModified(T entity)
+        {
+            Context.Entry(entity).State = EntityState.Modified;
+        }
     }
 }
