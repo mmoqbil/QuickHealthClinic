@@ -15,5 +15,7 @@ namespace QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces
         Task AddAsync(T entity);
         void Modify(T entity);
         void Remove(T entity);
+
+        void SetModified(T entity);
     }
 }
