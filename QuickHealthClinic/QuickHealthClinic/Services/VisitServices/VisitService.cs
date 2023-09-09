@@ -112,6 +112,21 @@ namespace QuickLifeCoachingClinic.Services.VisitServices
             return (visit.Id, createdVisitDto);
         }
 
+        public async Task<Visit?> EditVisitAsync(int id, PutVisitDto visitDto)
+        {
+            var mentor = await _unitOfWork.MentorRepository.GetAsync(visitDto.MentorId);
+            var student = await _unitOfWork.MentorRepository.GetAsync(visitDto.StudentId);
+            if (mentor == null || student == null) return null;
+
+            var dbVisit = await _unitOfWork.VisitRepository.GetAsync(id);
+            if (dbVisit == null) return null;
+
+            dbVisit = _mapper.Map(visitDto, dbVisit);
+           
+
+            await _unitOfWork.SaveAsync();
+            return dbVisit;
+        }
 
     }
 }
