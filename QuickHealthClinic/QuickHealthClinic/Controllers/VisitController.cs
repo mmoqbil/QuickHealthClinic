@@ -55,5 +55,12 @@ namespace QuickLifeCoachingClinic.Controllers
             var (visitId, visit) = await _visitsService.CreateVisitAsync(visitDto);
             return Created($"/api/visits/{visit.MentorId}", visit);
         }
+
+        [HttpPut("{id}")]
+        public async Task<bool> EditVisit([FromRoute] int id, [FromBody] PutVisitDto visitDto)
+        {
+            var visit = await _visitsService.EditVisitAsync(id, visitDto);
+            return visit != null;
+        }
     }
 }
