@@ -12,7 +12,7 @@ namespace QuickLifeCoachingClinic.Services.VisitServices
         Task<IEnumerable<VisitStudentDto>> GetVisitsByStudentIdAsync(int id);
         Task<(int, CreateVisitDto)> CreateVisitAsync(CreateVisitDto visitDto);
         Task<Visit?> EditVisitAsync(int id, PutVisitDto visitDto);
-        Task DeleteVisit(int id);
+        Task DeleteVisitAsync(int id);
 
     }
 }

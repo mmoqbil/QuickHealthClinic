@@ -128,7 +128,7 @@ namespace QuickLifeCoachingClinic.Services.VisitServices
             return dbVisit;
         }
 
-        public async Task DeleteVisit(int id)
+        public async Task DeleteVisitAsync(int id)
         {
             var visit = await _unitOfWork.VisitRepository.GetAsync(id);
             if (visit == null) return;
