@@ -62,5 +62,11 @@ namespace QuickLifeCoachingClinic.Controllers
             var visit = await _visitsService.EditVisitAsync(id, visitDto);
             return visit != null;
         }
+
+        [HttpDelete("{id}")]
+        public async Task DeleteVisit([FromRoute] int id)
+        {
+            await _visitsService.DeleteVisitAsync(id);
+        }
     }
 }
