@@ -1,6 +1,8 @@
-﻿namespace QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces
+﻿using QuickLifeCoachingClinic.DataAccess.Entities;
+
+namespace QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces
 {
-    public interface IReferralRepository
+    public interface IReferralRepository : IRepository<Referral>
     {
     }
 }
