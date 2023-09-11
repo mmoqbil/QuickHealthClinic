@@ -15,6 +15,7 @@ namespace QuickLifeCoachingClinic.DataAccess.Repositories
             VisitRepository = new VisitRepository(_context);
         }
         public IMentorRepository MentorRepository { get; }
+        public IReferralRepository ReferralRepository { get; }
         public IClinicRepository ClinicRepository { get; }
         public IStudentRepository StudentRepository { get; }
         public IVisitRepository VisitRepository { get; }
