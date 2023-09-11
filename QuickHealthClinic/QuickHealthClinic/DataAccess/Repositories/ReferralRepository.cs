@@ -8,7 +8,7 @@ namespace QuickLifeCoachingClinic.DataAccess.Repositories
     {
         public ReferralRepository(QuickLifeCoachingClinicContext context) : base(context)
         {
-      
+            DbSet = context.Referrals;
         }
     }
 }
