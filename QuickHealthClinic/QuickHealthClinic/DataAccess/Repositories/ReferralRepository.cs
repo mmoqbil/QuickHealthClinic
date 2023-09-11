@@ -1,6 +1,14 @@
-﻿namespace QuickLifeCoachingClinic.DataAccess.Repositories
+﻿using QuickLifeCoachingClinic.DataAccess.DbContexts;
+using QuickLifeCoachingClinic.DataAccess.Entities;
+using QuickLifeCoachingClinic.DataAccess.Repositories.Interfaces;
+
+namespace QuickLifeCoachingClinic.DataAccess.Repositories
 {
-    public class ReferralRepository
+    public class ReferralRepository : Repository<Referral>, IReferralRepository
     {
+        public ReferralRepository(QuickLifeCoachingClinicContext context) : base(context)
+        {
+      
+        }
     }
 }
