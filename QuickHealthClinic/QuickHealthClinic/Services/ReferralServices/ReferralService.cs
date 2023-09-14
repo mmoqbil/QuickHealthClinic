@@ -9,9 +9,10 @@ namespace QuickLifeCoachingClinic.Services.ReferralServices
         private readonly IMapper _mapper;
         private readonly IUnitOfWork _unitOfWork;
 
-        public ReferralService(IMapper mapper)
+        public ReferralService(IMapper mapper, IUnitOfWork unitOfWork)
         {
             _mapper = mapper;
+            _unitOfWork = unitOfWork;
         }
 
         public Task<IEnumerable<ReferralDto>> GetIdAsync(int id)
