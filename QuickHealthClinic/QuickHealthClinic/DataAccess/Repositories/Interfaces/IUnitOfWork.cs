@@ -6,6 +6,7 @@
         IStudentRepository StudentRepository { get; }
         IClinicRepository ClinicRepository { get; }
         IVisitRepository VisitRepository { get; }
+        IReferralRepository ReferralRepository { get; }
         Task SaveAsync();
     }
 }
