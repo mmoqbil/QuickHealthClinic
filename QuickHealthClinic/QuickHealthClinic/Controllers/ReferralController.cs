@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuickLifeCoachingClinic.Services.ReferralServices;
 
 namespace QuickLifeCoachingClinic.Controllers
 {
@@ -6,6 +7,6 @@ namespace QuickLifeCoachingClinic.Controllers
     [Route("/api/referrals")]
     public class ReferralController : ControllerBase
     {
-    
+        private readonly IReferralService _referralService;
     }
 }
