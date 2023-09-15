@@ -8,5 +8,10 @@ namespace QuickLifeCoachingClinic.Controllers
     public class ReferralController : ControllerBase
     {
         private readonly IReferralService _referralService;
+
+        public ReferralController(IReferralService referralService)
+        {
+            _referralService = referralService;
+        }
     }
 }
