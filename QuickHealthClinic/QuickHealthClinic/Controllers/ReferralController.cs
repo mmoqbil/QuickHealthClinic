@@ -4,11 +4,8 @@ namespace QuickLifeCoachingClinic.Controllers
 {
     [ApiController]
     [Route("/api/referrals")]
-    public class ReferralController : Controller
+    public class ReferralController : ControllerBase
     {
-        public IActionResult Index()
-        {
-            return View();
-        }
+    
     }
 }
