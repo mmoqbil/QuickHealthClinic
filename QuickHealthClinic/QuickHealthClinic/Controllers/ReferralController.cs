@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using QuickLifeCoachingClinic.DTOs.ReferralDtoFolder;
 using QuickLifeCoachingClinic.Services.ReferralServices;
 
 namespace QuickLifeCoachingClinic.Controllers
@@ -12,6 +13,13 @@ namespace QuickLifeCoachingClinic.Controllers
         public ReferralController(IReferralService referralService)
         {
             _referralService = referralService;
+        }
+
+        [HttpGet("{id}")]
+        public async Task<ActionResult<IEnumerable<ReferralDto>>> GetReferralsByIdAsync([FromRoute] int id)
+        {
+            var referrals = await _referralService.GetIdAsync(id);
+            return Ok(referrals);
         }
     }
 }
